@@ -1,0 +1,7 @@
+/comments
+spec_results
+.log
+.DS_Store
+.gitkeep
+yarn.lock
+.pry_history

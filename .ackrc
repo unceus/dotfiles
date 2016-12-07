@@ -1,0 +1,16 @@
+--type-add=js=.ejs
+--type-add=ruby=.erb
+--type-add=ruby=.rabl
+--type-add=css=.sass
+--type-add=css=.scss
+--type-add=ruby=.feature
+--type-add=ruby=.pp
+--type-add=ruby=.em
+--type-add=ruby=.emblem
+--type-add=js=.coffee
+--ignore-file=ext:map
+--ignore-file=ext:log
+--ignore-file=ext:scssc
+--ignore-dir=tmp
+--ignore-dir=bower_components
+--ignore-dir=node_modules

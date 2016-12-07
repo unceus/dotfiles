@@ -1,0 +1,48 @@
+#!/bin/bash
+
+while 
+mesg="\n==============================================\n
+  1.. Check .sfv files.\n
+  2.. Unrar all files.\n
+  3.. Delete rar and sfv files.\n
+  4.. Convert something to mp3\n
+  5.. Exit
+  \n==============================================\n
+Select: \c"
+do
+  echo -e $mesg
+  read selection
+  case $selection in
+  1)
+    cd $1
+    cfv -r ;;
+  2)
+    for f in `find $1 -wholename *.r01`
+    do
+      echo "Unpacking in directory: "`dirname $f`
+      rar e -inul $f .
+    done ;;
+  3)
+    for g in `find $1 -wholename *.r01`
+    do 
+      cd `dirname $g`
+      echo "Deleting in directory: "`dirname $g`
+      rm *.r?? *.url *.sfv imdb.nfo
+      rm -r Sample/
+    done ;;
+  4) 
+    if [ $# -lt 1 ]
+    then
+      echo "Need to specify the extension to convert, bro."
+      exit
+    fi
+
+    for f in `find $1 -wholename *.$2`
+    do
+      echo "Converting "$f
+      mplayer -dumpaudio -dumpfile $f.mp3 $f
+    done ;;
+  5) 
+    exit;;
+  esac
+done

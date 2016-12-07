@@ -1,0 +1,15 @@
+URxvt.foreground: white
+
+URxvt.font: xft:Anonymous Pro:antialias=true:pixelsize=22
+URxvt.background: rgba:0000/0000/0000/dddd
+URxvt.loginShell: true
+URxvt.fading: 50
+URxvt.fadeColor: [0]black
+URxvt.perl-lib: /usr/lib/urxvt/perl
+URxvt.keysym.M-u: perl:mark-yank-urls:activate_mark_mode
+URxvt.underlineURLs: true
+URxvt.perl-ext: selection,mark-yank-urls
+URxvt.urlLauncher: /usr/bin/firefox
+URxvt.underlineColor: green
+URxvt.saveLines: 65535
+URxvt.scrollBar: false

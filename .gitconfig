@@ -1,0 +1,42 @@
+[color]
+	ui = auto
+
+[difftool]
+	prompt = false
+
+[diff]
+	tool = opendiff
+
+[merge]
+	tool = opendiff
+
+[alias]
+  fmerge = merge --ff-only
+  imerge = merge --no-commit --no-ff
+  co     = checkout
+  stat   = status -sb
+  st     = status -sb
+  dt     = difftool
+  rc     = rebase --continue
+  ra     = rebase --abort
+[core]
+	editor = /usr/local/bin/vim
+	excludesfile = ~/.gitignore_global
+[rerere]
+	enabled = 1
+[help]
+	autocorrect = 1
+[push]
+	default = current
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
+	required = true

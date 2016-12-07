@@ -1,0 +1,38 @@
+Config { font = "xft:inconsolatalgc:pixelsize=20:antialias=true"
+  , bgColor = "#002b36"
+  , fgColor = "#657b83"
+  , border = NoBorder
+  , borderColor = "black"
+  , hideOnStart = False
+  , persistent = True
+  , position = Top
+  , lowerOnStart = False
+  , commands = [
+    Run Weather "KSFO" ["-t"," <tempF>F","-L","64","-H","77","--normal","#657b83","--high","#657b83","--low","#657b83"] 36000
+  , Run Network "wlp58s0" ["-L","0","-H","32","--normal","#657b83","--high","#657b83"] 10
+  , Run Cpu ["-L","3","-H","50","--normal","#657b83","--high","#657b83"] 10
+  , Run Memory ["-t","Mem: <usedratio>%"] 10
+  , Run Com "volume.sh" [] "vol" 1
+  , Run Date "<fc=#93a1a1>%a %b %_d %Y %l:%M</fc>" "date" 10
+  , Run StdinReader
+	, Run Battery        [ "--template" , "Batt: <acstatus>"
+											 , "--Low"      , "15"        -- units: %
+											 , "--High"     , "80"        -- units: %
+											 , "--low"      , "darkred"
+											 , "--normal"   , "darkorange"
+											 , "--high"     , "darkgreen"
+
+											 , "--" -- battery specific options
+																 -- discharging status
+																 , "-o"	, "<left>% (<timeleft>)"
+																 -- AC "on" status
+																 , "-O"	, "<fc=#dAA520>Charging</fc> <left>%"
+																 -- charged status
+																 , "-i"	, "<fc=#006000>Charged</fc>"
+											 ] 50
+
+]
+  , sepChar = "%"
+  , alignSep = "}{"
+  , template = " %StdinReader% }{ %cpu% | %memory% | %wlp58s0% | %vol% | SFO:%KSFO% | %battery% | %date% "
+}

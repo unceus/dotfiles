@@ -1,0 +1,4 @@
+
+binlist=(
+  '~/.xsession'
+)
