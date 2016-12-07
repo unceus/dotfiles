@@ -64,14 +64,18 @@ alias removesvn='rm -rf `find . -type d -name .svn`'
 alias restoreprod='development restore production && rake jobs:clear db:migrate db:seed db:anonymize'
 alias nombom='npm cache clear && bower cache clean && rm -rf node_modules bower_components && npm install && bower install'
 alias dockerenv='eval $(docker-machine env)'
+alias dockercleanimages='docker rmi $(docker images | ag "^<none>" | sed "s/  */ /g" | cut -d " " -f3)'
 
 #Joyable
 alias jstart='docker-sync-stack clean && docker-sync-stack start'
 alias jbuild='docker-compose build'
+alias jmerge='git merge --ff-only $1'
+alias jseed='dev run rake db:seed'
+alias jmigrate='dev run rake db:migrate'
+
 alias cdj='cd ~/Dropbox/Work/Joyable/joyable'
 alias cdj2='cd ~/Dropbox/Work/Joyable/joyable2'
 alias jpr='open https://github.com/Joyable/joyable/compare/master...`current_branch`'
-alias jmerge='git merge --ff-only $1'
 
 #ig
 alias clearrediscache='redis-cli -p  6379 -n 2 keys "*" | xargs redis-cli -p 6379 -n 2 del $1'
