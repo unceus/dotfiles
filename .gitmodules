@@ -98,10 +98,6 @@
 	path = .vim/bundle/vim-emblem
 	url = https://github.com/heartsentwined/vim-emblem.git
   ignore = dirty
-[submodule ".vim/bundle/snipmate-snippets"]
-	path = .vim/bundle/snipmate-snippets
-	url = https://@github.com/unceus/snipmate-snippets.git
-  ignore = dirty
 [submodule ".vim/bundle/vim-colorschemes"]
 	path = .vim/bundle/vim-colorschemes
 	url = https://github.com/flazz/vim-colorschemes.git
