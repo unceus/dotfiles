@@ -64,6 +64,7 @@ alias restoreprod='development restore production && rake jobs:clear db:migrate 
 alias nombom='npm cache clear && bower cache clean && rm -rf node_modules bower_components && npm install && bower install'
 alias dockerenv='eval $(docker-machine env)'
 alias dockercleanimages='docker rmi $(docker images | ag "^<none>" | sed "s/  */ /g" | cut -d " " -f3)'
+alias removeunusedpackages='pacman -Rsn $(pacman -Qdtq)'
 
 #Joyable
 alias jstart='docker-sync-stack clean && docker-sync-stack start'
