@@ -142,9 +142,15 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   -- Increase volume.
   , ((0, 0x1008ff13), spawn "amixer -q set Master 5%+")
 
-  -- Audio previous.
-  , ((0, 0x1008FF16),
-     spawn "")
+  -- Lower brightness
+  , ((0, 0x1008ff03), spawn "brightness $(( $(brightness) - 100 ))")
+
+  -- Raise brightness
+  , ((0, 0x1008ff02), spawn "brightness $(( $(brightness) + 100 ))")
+
+  -- Lock with mod+f1
+  , ((modMask, 0x1008ff12),
+     spawn "i3lock")
 
   -- Play/pause.
   , ((0, 0x1008FF14),

@@ -40,7 +40,6 @@ PS1='\[\e[1;36m\]\h.\[\e[m\]\[\e[0;32m\]\W\[\e[m\]\[\e[1;33m\] $(__git_ps1 "(%s)
 #linux
 alias xterm='xterm -tn xterm-256color'
 alias sctl='sudo systemctl'
-function b() { sudo tee /sys/class/backlight/intel_backlight/brightness <<< $1; }
 alias c='google-chrome-stable'
 alias d='google-chrome-stable --app=https://app.dictate.life'
 alias lock='i3lock'
