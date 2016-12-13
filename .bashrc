@@ -116,7 +116,7 @@ alias cdr='cd ~/Dropbox/Work/RailsTasks3/'
 
 alias cdb='cd ~/Dropbox/Work/Blinky'
 
-alias removedbconflicts="find . -name \*\'s\ conflicted\ copy\ \* -exec mv -v {} ~/.Trash/ \;"
+alias removedbconflicts="find . -name \*\'s\ conflicted\ copy\ \* -exec rm -rf {} \;"
 
 ################################################################################
 
