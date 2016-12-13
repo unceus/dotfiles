@@ -152,6 +152,10 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((modMask, 0x1008ff12),
      spawn "i3lock")
 
+  -- Chrome
+  , ((modMask, 0x63),
+     spawn "google-chrome-stable")
+
   -- Play/pause.
   , ((0, 0x1008FF14),
      spawn "")
