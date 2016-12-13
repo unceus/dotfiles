@@ -124,7 +124,7 @@ alias removedbconflicts="find . -name \*\'s\ conflicted\ copy\ \* -exec mv -v {}
 #Git stuff
 function gc() { git add . && git add -u . && git commit -am"$*"; }
 function gca() { git commit --amend -m"$*"; }
-alias gp='git push'
+alias gp='git push -u'
 alias gd='git diff'
 
 alias gi='git log --all --oneline --color --decorate'
@@ -136,6 +136,10 @@ alias gm='git checkout master'
 alias gb='git branch'
 alias gs='gg --grep $1' #git search
 alias gprune='git remote prune origin'
+function track() {
+  branch=$(current_branch);
+  git branch --set-upstream-to=origin/${branch}
+  }
 function gss() { git stash save "$*"; }
 alias gsl='git stash list'
 alias gpf='git push --force'
