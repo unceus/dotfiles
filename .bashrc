@@ -72,6 +72,7 @@ alias jbuild='docker-compose build'
 alias jmerge='git merge --ff-only $1'
 alias jseed='dev run rake db:seed'
 alias jmigrate='dev run rake db:migrate'
+alias jclean='docker-sync-stack clean'
 
 alias cdj='cd ~/Dropbox/Work/Joyable/joyable'
 alias cdj2='cd ~/Dropbox/Work/Joyable/joyable2'
