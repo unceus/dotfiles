@@ -9,7 +9,6 @@ HISTSIZE=5000
 
 [[ -s $HOME/.env ]] && source $HOME/.env
 
-
 export SVN_EDITOR='vim'
 export PATH=$PATH:/Development/android-sdk-macosx/platform-tools:/Development/android-sdk-macosx/tools #android
 export PATH=./bin:/Users/michaeljoseph/.rvm/rubies/ruby-2.3.1/bin:/Users/michaeljoseph/.rvm/gems/ruby-2.3.1/bin:/usr/local/bin:/opt/node/bin:$HOME/.rvm/bin:$HOME/.scripts:/usr/local/rvm/bin:/usr/bin:$PATH
@@ -53,7 +52,7 @@ alias wing='ssh winger'
 alias wl='ssh winger.local'
 alias gl='ssh abed'
 alias fin='open -a finder $1'
-alias sub='open -a Sublime\ Text\ 2 $1'
+alias sub='open -a Sublime\ Text $1'
 alias 'git-gui'='/usr/local/Cellar/git/1.7.12/libexec/git-core/git-gui'
 alias sublime='open -a Sublime\ Text\ 2 $1'
 alias canary='/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary --disable-web-security --allow-running-insecure-content'
@@ -67,7 +66,8 @@ alias dockercleanimages='docker rmi $(docker images | ag "^<none>" | sed "s/  */
 alias removeunusedpackages='pacman -Rsn $(pacman -Qdtq)'
 
 #Joyable
-alias jstart='docker-sync-stack clean && docker-sync-stack start'
+alias jclean='docker-sync-stack clean'
+alias jstart='jclean && docker-sync-stack start'
 alias jbuild='docker-compose build'
 alias jmerge='git merge --ff-only $1'
 alias jseed='dev run rake db:seed'
@@ -76,13 +76,10 @@ alias jclean='docker-sync-stack clean'
 
 alias cdj='cd ~/Dropbox/Work/Joyable/joyable'
 alias cdj2='cd ~/Dropbox/Work/Joyable/joyable2'
-alias jpr='open https://github.com/Joyable/joyable/compare/master...`current_branch`'
 
 #ig
 alias clearrediscache='redis-cli -p  6379 -n 2 keys "*" | xargs redis-cli -p 6379 -n 2 del $1'
 alias fs='foreman start && passenger stop'
-alias ms='rails s -p 3001'
-alias snapshots='psql -U $USER -c "\list" postgres'
 
 alias mpc='mpc -h abed'
 alias mpd='mpd /etc/mpd.conf --no-daemon'
@@ -104,11 +101,6 @@ alias fp='ps aux -ww | ag $1'
 
 #Color ls
 alias ls='ls -G'
-
-#OS X - Sets a file as hidden
-alias hideFile='SetFile -a V $1'
-#OS X - Sets a file as visible
-alias showFile='SetFile -a v $1'
 
 #list directories by size
 alias qdu='du -h -d 1 . | sort -n -r'
@@ -158,34 +150,10 @@ function current_branch() {
   echo "$branch"
 }
 
-function dstaging() {
-  branch=$(current_branch);
-  git push staging +${branch}:master;
-}
-
-function dsassy {
-  branch=$(current_branch);
-  git push sassy +${branch}:master;
-}
-
-function dfluffy {
-  branch=$(current_branch);
-  git push fluffy +${branch}:master;
-}
-
-alias sc='sass --watch app/sass/:public/stylesheets/'
-
-alias formatjson='pbpaste | python -m json.tool'
-alias fj='formatjson'
-
 ################################################################################
 alias setpostgresmem='sudo sysctl -w kern.sysv.shmmax=12582912;sudo sysctl -w kern.sysv.shmall=12582912'
 alias startpostgres='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias stoppostgres='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
-
-alias 'mailcatcher'='mailcatcher --http-ip 0.0.0.0'
-
-################################################################################
 
 #enable GRC
 if [ "command -v grc" ]; then
@@ -208,6 +176,5 @@ fi
 if [ "command -v DNSSD" ]; then
   alias listbonjourservers="dns-sd -B _afpovertcp._tcp ."
 fi
-
 
 export PATH="$HOME/.yarn/bin:$PATH"
