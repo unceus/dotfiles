@@ -65,18 +65,6 @@ alias dockerenv='eval $(docker-machine env)'
 alias dockercleanimages='docker rmi $(docker images | ag "^<none>" | sed "s/  */ /g" | cut -d " " -f3)'
 alias removeunusedpackages='pacman -Rsn $(pacman -Qdtq)'
 
-#Joyable
-alias jclean='docker-sync-stack clean'
-alias jstart='jclean && docker-sync-stack start'
-alias jbuild='docker-compose build'
-alias jmerge='git merge --ff-only $1'
-alias jseed='dev run rake db:seed'
-alias jmigrate='dev run rake db:migrate'
-alias jclean='docker-sync-stack clean'
-
-alias cdj='cd ~/Dropbox/Work/Joyable/joyable'
-alias cdj2='cd ~/Dropbox/Work/Joyable/joyable2'
-
 #ig
 alias clearrediscache='redis-cli -p  6379 -n 2 keys "*" | xargs redis-cli -p 6379 -n 2 del $1'
 alias fs='foreman start && passenger stop'
