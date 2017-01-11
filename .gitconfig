@@ -9,7 +9,7 @@
 	prompt = false
 
 [diff]
-	tool = opendiff
+	tool = vimdiff
 
 [merge]
 	tool = opendiff
@@ -23,6 +23,7 @@
   dt     = difftool
   rc     = rebase --continue
   ra     = rebase --abort
+	d = difftool
 [core]
 	editor = /usr/local/bin/vim
 	excludesfile = ~/.gitignore_global
