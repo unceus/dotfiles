@@ -137,10 +137,10 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((0, 0x1008ff12), spawn "amixer -q set Master toggle")
 
   -- Decrease volume.
-  , ((0, 0x1008ff11), spawn "amixer -q set Master 5%-")
+  , ((0, 0x1008ff11), spawn "pactl set-sink-volume 0 -5%")
 
   -- Increase volume.
-  , ((0, 0x1008ff13), spawn "amixer -q set Master 5%+")
+  , ((0, 0x1008ff13), spawn "pactl set-sink-volume 0 +5%")
 
   -- Lower brightness
   , ((0, 0x1008ff03), spawn "brightness $(( $(brightness) - 100 ))")
