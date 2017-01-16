@@ -107,6 +107,7 @@ function gc() { git add . && git add -u . && git commit -am"$*"; }
 function gca() { git commit --amend -m"$*"; }
 alias gp='git push -u'
 alias gd='git diff'
+alias gds='git diff --staged'
 
 alias gi='git log --all --oneline --color --decorate'
 alias gg='git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short --decorate'
