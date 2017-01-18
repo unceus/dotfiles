@@ -45,6 +45,7 @@ alias lock='i3lock'
 alias pu='sudo pacman -Syu'
 alias pi='packer -S $1'
 alias pss='packer -Ss $1'
+alias pacmanremoveorphans='pacman -Rns $(pacman -Qtdq)'
 
 alias vi='vim'
 alias gob='ssh secure'
