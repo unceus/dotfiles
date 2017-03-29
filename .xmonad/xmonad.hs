@@ -152,9 +152,17 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((modMask, 0x1008ff12),
      spawn "i3lock")
 
+  -- Plex
+  , ((modMask, 0x70),
+     spawn "plexmediaplayer")
+
   -- Chrome
   , ((modMask, 0x63),
      spawn "google-chrome-stable")
+
+  -- Dict8
+  , ((modMask, 0x64),
+     spawn "google-chrome-stable --app=https://app.dictate.life")
 
   -- Play/pause.
   , ((0, 0x1008FF14),
