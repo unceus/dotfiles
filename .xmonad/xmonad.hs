@@ -308,7 +308,7 @@ myStartupHook = return ()
 ------------------------------------------------------------------------
 -- Floats all windows in a certain workspace. 
 -- myLayouts
-myLayouts = onWorkspace "three" simplestFloat $ defaultLayouts
+-- myLayouts = onWorkspace "three" simplestFloat $ defaultLayouts
 
 ------------------------------------------------------------------------
 -- Run xmonad with all the defaults we set up.
