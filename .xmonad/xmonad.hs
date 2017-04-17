@@ -156,6 +156,14 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((modMask, 0x70),
      spawn "plexmediaplayer")
 
+  -- Nemo (file manager)
+  , ((modMask, 0x66),
+     spawn "nemo")
+
+  -- Git-cola
+  , ((modMask, 0x67),
+     spawn "git-cola")
+
   -- Chrome
   , ((modMask, 0x63),
      spawn "google-chrome-stable")
@@ -308,7 +316,7 @@ myStartupHook = return ()
 ------------------------------------------------------------------------
 -- Floats all windows in a certain workspace. 
 -- myLayouts
--- myLayouts = onWorkspace "three" simplestFloat $ defaultLayouts
+myLayouts = defaultLayouts
 
 ------------------------------------------------------------------------
 -- Run xmonad with all the defaults we set up.
