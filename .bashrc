@@ -9,9 +9,11 @@ HISTSIZE=5000
 
 [[ -s $HOME/.env ]] && source $HOME/.env
 
+export RABBITMQ_URL='amqp://guest:guest@localhost/dictate'
 export SVN_EDITOR='vim'
 export PATH=$PATH:/Development/android-sdk-macosx/platform-tools:/Development/android-sdk-macosx/tools #android
-export PATH=./bin:/Users/michaeljoseph/.rvm/rubies/ruby-2.3.1/bin:/Users/michaeljoseph/.rvm/gems/ruby-2.3.1/bin:/usr/local/bin:/opt/node/bin:$HOME/.rvm/bin:$HOME/.scripts:/usr/local/rvm/bin:/usr/bin:$PATH
+#export PATH=$PATH:$HOME/.rvm/rubies/ruby-2.3.1/bin
+export PATH=./bin:/Users/michaeljoseph/.rvm/gems/ruby-2.3.1/bin:/usr/local/bin:/opt/node/bin:$HOME/.rvm/bin:$HOME/.scripts:/usr/local/rvm/bin:/usr/bin:$HOME/.gem/ruby/2.3.1/bin:$HOME/.gem/ruby/2.4.0/bin:$PATH
 export PATH=$HOME/.yarn/bin:$PATH
 [ -z "$PS1" ] && return
 export XENVIRONMENT="${HOME}/.Xresources"
@@ -65,6 +67,9 @@ alias nombom='npm cache clear && bower cache clean && rm -rf node_modules bower_
 alias dockerenv='eval $(docker-machine env)'
 alias dockercleanimages='docker rmi $(docker images | ag "^<none>" | sed "s/  */ /g" | cut -d " " -f3)'
 alias removeunusedpackages='pacman -Rsn $(pacman -Qdtq)'
+alias iex='rlwrap -a -A iex'
+alias mt='mix test --trace'
+alias deploy='git push dokku --force --no-verify'
 
 #ig
 alias clearrediscache='redis-cli -p  6379 -n 2 keys "*" | xargs redis-cli -p 6379 -n 2 del $1'
@@ -95,6 +100,8 @@ alias ls='ls -G'
 alias qdu='du -h -d 1 . | sort -n -r'
 
 alias cdr='cd ~/Dropbox/Work/RailsTasks3/'
+alias cde='cd ~/Dropbox/Work/Dictate_Elixir/dictate_umbrella'
+alias cdd='cd ~/Dropbox/Work/dictate_ember'
 
 alias cdb='cd ~/Dropbox/Work/Blinky'
 
@@ -168,3 +175,4 @@ if [ "command -v DNSSD" ]; then
 fi
 
 export PATH="$HOME/.yarn/bin:$PATH"
+source /usr/share/nvm/init-nvm.sh

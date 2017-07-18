@@ -45,3 +45,5 @@
 	clean = git lfs clean %f
 	smudge = git lfs smudge %f
 	required = true
+[cola]
+	fontdiff = Monospace,12,-1,5,50,0,0,0,0,0
