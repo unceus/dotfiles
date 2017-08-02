@@ -323,7 +323,6 @@ let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_scss_checkers = ['sass']
 let g:syntastic_json_checkers = ['jsonlint']
 let g:syntastic_coffee_script_checkers = ['coffee']
-let g:syntastic_ruby_rubocop_exec = '/Users/michaeljoseph/.scripts/rubocop'
 
 let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 0

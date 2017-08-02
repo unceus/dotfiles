@@ -13,7 +13,7 @@ export RABBITMQ_URL='amqp://guest:guest@localhost/dictate'
 export SVN_EDITOR='vim'
 export PATH=$PATH:/Development/android-sdk-macosx/platform-tools:/Development/android-sdk-macosx/tools #android
 #export PATH=$PATH:$HOME/.rvm/rubies/ruby-2.3.1/bin
-export PATH=./bin:/Users/michaeljoseph/.rvm/gems/ruby-2.3.1/bin:/usr/local/bin:/opt/node/bin:$HOME/.rvm/bin:$HOME/.scripts:/usr/local/rvm/bin:/usr/bin:$HOME/.gem/ruby/2.3.1/bin:$HOME/.gem/ruby/2.4.0/bin:$PATH
+export PATH=/Users/michaeljoseph/.rvm/gems/ruby-2.3.1/bin:/usr/local/bin:/opt/node/bin:$HOME/.rvm/bin:$HOME/.scripts:/usr/local/rvm/bin:/usr/bin:$HOME/.gem/ruby/2.3.1/bin:$HOME/.gem/ruby/2.4.0/bin:$PATH
 export PATH=$HOME/.yarn/bin:$PATH
 [ -z "$PS1" ] && return
 export XENVIRONMENT="${HOME}/.Xresources"
@@ -48,6 +48,7 @@ alias pu='sudo pacman -Syu'
 alias pi='packer -S $1'
 alias pss='packer -Ss $1'
 alias pacmanremoveorphans='pacman -Rns $(pacman -Qtdq)'
+alias define='sdcv'
 
 alias vi='vim'
 alias gob='ssh secure'
@@ -68,7 +69,7 @@ alias dockerenv='eval $(docker-machine env)'
 alias dockercleanimages='docker rmi $(docker images | ag "^<none>" | sed "s/  */ /g" | cut -d " " -f3)'
 alias removeunusedpackages='pacman -Rsn $(pacman -Qdtq)'
 alias iex='rlwrap -a -A iex'
-alias mt='mix test --trace'
+alias mt='JWT_SECRET=fartz mix test --trace'
 alias deploy='git push dokku --force --no-verify'
 
 #ig

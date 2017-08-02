@@ -7,13 +7,13 @@ Make sure submodules are checked out after pull:
     git submodule update
 
 To update already downloaded modules,
-    
-    git submodule update --recursive
+
+    git submodule update --remote --merge
 
 or, if that doesn't work:
 
     git submodule foreach git reset --hard HEAD
-    
+
     git submodule foreach git checkout master
 
     git submodule foreach git pull origin master
