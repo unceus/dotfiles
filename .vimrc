@@ -329,3 +329,13 @@ let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+
+" Ensure that helptags are generated for the vim help directory
+let g:DocPath = expand("$VIMRUNTIME/doc")
+let g:DocTags = join([g:DocPath, "tags"], "/")
+if !filereadable(g:DocTags)
+    execute join(["helptags", g:DocPath])
+endif
+
+" supertab
+let g:SuperTabNoCompleteAfter = ['^', ',', '\s']
