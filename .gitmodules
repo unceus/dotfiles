@@ -46,10 +46,6 @@
 	path = .vim/bundle/vim-markdown
 	url = https://github.com/tpope/vim-markdown.git
   ignore = dirty
-[submodule ".vim/bundle/gem-ctags"]
-	path = .vim/bundle/gem-ctags
-	url = https://github.com/tpope/gem-ctags.git
-  ignore = dirty
 [submodule ".vim/bundle/endwise"]
 	path = .vim/bundle/endwise
 	url = https://github.com/tpope/vim-endwise.git
@@ -61,10 +57,6 @@
 [submodule ".vim/bundle/vim-matchit"]
 	path = .vim/bundle/vim-matchit
 	url = https://github.com/unceus/vim-matchit.git
-  ignore = dirty
-[submodule ".vim/bundle/jsbeautify"]
-	path = .vim/bundle/jsbeautify
-	url = https://github.com/maksimr/vim-jsbeautify.git
   ignore = dirty
 [submodule ".vim/bundle/color-sampler-pack"]
 	path = .vim/bundle/color-sampler-pack
@@ -101,10 +93,6 @@
 [submodule ".vim/bundle/ag"]
 	path = .vim/bundle/ag
 	url = https://github.com/rking/ag.vim
-  ignore = dirty
-[submodule ".vim/bundle/vim-fugitive"]
-	path = .vim/bundle/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive.git
   ignore = dirty
 [submodule ".vim/bundle/vim-gitgutter"]
 	path = .vim/bundle/vim-gitgutter
