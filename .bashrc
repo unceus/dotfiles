@@ -14,7 +14,7 @@ export RABBITMQ_URL='amqp://guest:guest@localhost/dictate'
 export SVN_EDITOR='vim'
 export PATH=$PATH:/Development/android-sdk-macosx/platform-tools:/Development/android-sdk-macosx/tools #android
 #export PATH=$PATH:$HOME/.rvm/rubies/ruby-2.3.1/bin
-export PATH=$HOME/.rvm/gems/ruby-2.4.1/bin:$HOME/.rvm/gems/ruby-2.3.1/bin:/usr/local/bin:/opt/node/bin:$HOME/.rvm/bin:$HOME/.scripts:/usr/local/rvm/bin:/usr/bin:$HOME/.gem/ruby/2.3.1/bin:$HOME/.gem/ruby/2.4.1/bin:$PATH
+export PATH=$HOME/.rvm/gems/ruby-2.4.1/bin:$HOME/.rvm/gems/ruby-2.3.1/bin:/usr/local/bin:/opt/node/bin:$HOME/.rvm/bin:$HOME/.scripts:/usr/local/rvm/bin:/usr/bin:$HOME/.gem/ruby/2.3.1/bin:$HOME/.gem/ruby/2.4.1/bin:./bin:$PATH
 export PATH=$HOME/.yarn/bin:$PATH
 [ -z "$PS1" ] && return
 export XENVIRONMENT="${HOME}/.Xresources"
@@ -76,6 +76,9 @@ alias deploy='git push dokku --force --no-verify'
 function encrypt() { openssl aes-256-cbc -salt -in $1 -out $2; }
 function decrypt() { openssl aes-256-cbc -d -salt -in $1 -out $2; }
 
+#rails
+alias rr="rake routes | grep $1"
+
 #ig
 alias clearrediscache='redis-cli -p  6379 -n 2 keys "*" | xargs redis-cli -p 6379 -n 2 del $1'
 alias fs='foreman start && passenger stop'
@@ -104,7 +107,6 @@ alias ls='ls -G'
 #list directories by size
 alias qdu='du -h -d 1 . | sort -n -r'
 
-alias cdr='cd ~/Dropbox/Work/RailsTasks3/'
 alias cde='cd ~/Dropbox/Work/Dictate_Elixir/dictate_umbrella'
 alias cdd='cd ~/Dropbox/Work/dictate_ember'
 alias cdh='cd ~/Dropbox/Work/hsl'
