@@ -14,7 +14,7 @@ export RABBITMQ_URL='amqp://guest:guest@localhost/dictate'
 export SVN_EDITOR='vim'
 export PATH=$PATH:/Development/android-sdk-macosx/platform-tools:/Development/android-sdk-macosx/tools #android
 #export PATH=$PATH:$HOME/.rvm/rubies/ruby-2.3.1/bin
-export PATH=$HOME/.rvm/gems/ruby-2.4.1/bin:$HOME/.rvm/gems/ruby-2.3.1/bin:/usr/local/bin:/opt/node/bin:$HOME/.rvm/bin:$HOME/.scripts:/usr/local/rvm/bin:/usr/bin:$HOME/.gem/ruby/2.3.1/bin:$HOME/.gem/ruby/2.4.1/bin:./bin:$PATH
+export PATH=$HOME/.rvm/gems/ruby-2.4.1/bin:$HOME/.rvm/gems/ruby-2.3.1/bin:/usr/local/bin:/opt/node/bin:$HOME/.rvm/bin:$HOME/.scripts:/usr/local/rvm/bin:/usr/bin:$HOME/.gem/ruby/2.3.1/bin:$HOME/.gem/ruby/2.4.1/bin:$PATH
 export PATH=$HOME/.yarn/bin:$PATH
 [ -z "$PS1" ] && return
 export XENVIRONMENT="${HOME}/.Xresources"
@@ -33,7 +33,9 @@ fi
 #PS1='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[3;32m\]$(__git_ps1 "(%s)")☺\[\e[m\] \[\e[1;37m\]'
 #PS1='[ \[\e[0;32m\]\u\[\e[m\] | \[\e[1;34m\]\W\[\e[m\] \[\e[3;32m\]$(__git_ps1 "(%s)") ] ☺\[\e[m\] \[\e[1;37m\]'
 #PS1='\[\e[1;30m\].\[\e[m\]\[\e[0;37m\]\u\[\e[m\] \[\e[1;30m\]»\[\e[m\] \[\e[0;32m\]\W\[\e[m\]\[\e[1;33m\] $(__git_ps1 "(%s)")\[\e[m\]\[\e[3;32m\]☺\[\e[m\] \[\e[1;37m\]'
-PS1='\[\e[1;36m\]\h.\[\e[m\]\[\e[0;32m\]\W\[\e[m\]\[\e[1;33m\] $(__git_ps1 "(%s)")\[\e[m\]\[\e[3;32m\]🌲 \[\e[m\]\[\e[1;37m\]'
+
+#PS1='\[\e[1;36m\]\h.\[\e[m\]\[\e[0;32m\]\W\[\e[m\]\[\e[1;33m\] $(__git_ps1 "(%s)")\[\e[m\]\[\e[3;32m\]¯\_(ツ)_/¯ \[\e[m\]\[\e[1;37m\]'
+PS1='\[\e[1;36m\]\h.\[\e[m\]\[\e[0;32m\]\W\[\e[m\]\[\e[1;33m\] $(__git_ps1 "(%s)")\[\e[m\]\[\e[3;32m\](╯°□°）╯︵ ┻━┻) \[\e[m\]\[\e[1;37m\]'
 #git line - standalone
 #PS1='$(__git_ps1 "(%s)")'
 
@@ -67,12 +69,14 @@ alias removesvn='rm -rf `find . -type d -name .svn`'
 alias restoreprod='development restore production && rake jobs:clear db:migrate db:seed db:anonymize'
 alias nombom='npm cache clear && bower cache clean && rm -rf node_modules bower_components && npm install && bower install'
 alias dockerenv='eval $(docker-machine env)'
-alias dockercleanimages='docker rmi $(docker images | ag "^<none>" | sed "s/  */ /g" | cut -d " " -f3)'
+alias dockercleanimages='docker rmi -f $(docker images | ag "^<none>" | sed "s/  */ /g" | cut -d " " -f3)'
+function dc() { docker-compose "$*"; }
 alias removeunusedpackages='pacman -Rsn $(pacman -Qdtq)'
-alias iex='rlwrap -a -A iex'
+alias iex='JWT_SECRET=fartz rlwrap -a -A iex'
 alias mt='JWT_SECRET=fartz mix test --trace'
 alias mti='JWT_SECRET=fartz iex -S mix test --trace'
 alias deploy='git push dokku --force --no-verify'
+alias de='git push $1 --force --no-verify'
 function encrypt() { openssl aes-256-cbc -salt -in $1 -out $2; }
 function decrypt() { openssl aes-256-cbc -d -salt -in $1 -out $2; }
 
@@ -107,9 +111,11 @@ alias ls='ls -G'
 #list directories by size
 alias qdu='du -h -d 1 . | sort -n -r'
 
+alias cdi='cd ~/Dropbox/Work/ipapi'
 alias cde='cd ~/Dropbox/Work/Dictate_Elixir/dictate_umbrella'
 alias cdd='cd ~/Dropbox/Work/dictate_ember'
 alias cdh='cd ~/Dropbox/Work/hsl'
+alias cdm='cd ~/Dropbox/Work/helpselfmockups'
 
 alias cdb='cd ~/Dropbox/Work/Blinky'
 
