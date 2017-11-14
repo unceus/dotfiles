@@ -14,7 +14,7 @@ export RABBITMQ_URL='amqp://guest:guest@localhost/dictate'
 export SVN_EDITOR='vim'
 export PATH=$PATH:/Development/android-sdk-macosx/platform-tools:/Development/android-sdk-macosx/tools #android
 #export PATH=$PATH:$HOME/.rvm/rubies/ruby-2.3.1/bin
-export PATH=$HOME/.rvm/gems/ruby-2.4.1/bin:$HOME/.rvm/gems/ruby-2.3.1/bin:/usr/local/bin:/opt/node/bin:$HOME/.rvm/bin:$HOME/.scripts:/usr/local/rvm/bin:/usr/bin:$HOME/.gem/ruby/2.3.1/bin:$HOME/.gem/ruby/2.4.1/bin:$PATH
+export PATH=$HOME/.rvm/gems/ruby-2.4.1/bin:$HOME/.rvm/gems/ruby-2.3.1/bin:/usr/local/bin:/opt/node/bin:$HOME/.rvm/bin:$HOME/.scripts:/usr/local/rvm/bin:/usr/bin:$HOME/.gem/ruby/2.3.1/bin:$HOME/.gem/ruby/2.4.1/bin:./bin:$PATH
 export PATH=$HOME/.yarn/bin:$PATH
 [ -z "$PS1" ] && return
 export XENVIRONMENT="${HOME}/.Xresources"
