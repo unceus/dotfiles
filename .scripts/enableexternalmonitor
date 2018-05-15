@@ -1,2 +1,2 @@
 #!/bin/sh
-xrandr --output eDP1 --auto --output DP1 --auto --right-of eDP1 --dpi 96
+xrandr --output eDP1 --auto --output VIRTUAL1 --auto --right-of eDP1 --dpi 96

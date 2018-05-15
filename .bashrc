@@ -115,7 +115,8 @@ alias cdi='cd ~/Dropbox/Work/ipapi'
 alias cde='cd ~/Dropbox/Work/Dictate_Elixir/dictate_umbrella'
 alias cdd='cd ~/Dropbox/Work/dictate_ember'
 alias cdh='cd ~/Dropbox/Work/hsl'
-alias cdm='cd ~/Dropbox/Work/helpselfmockups'
+alias cda='cd ~/Dropbox/Work/hslmapperapi'
+alias cdm='cd ~/Dropbox/Work/hslmapper'
 
 alias cdb='cd ~/Dropbox/Work/Blinky'
 
@@ -138,7 +139,6 @@ alias gco='git checkout $1'
 alias gcl='git clone $1'
 alias gm='git checkout master'
 alias gb='git branch'
-alias gs='gg --grep $1' #git search
 alias gprune='git remote prune origin'
 function track() {
   branch=$(current_branch);
@@ -165,24 +165,6 @@ function current_branch() {
 alias setpostgresmem='sudo sysctl -w kern.sysv.shmmax=12582912;sudo sysctl -w kern.sysv.shmall=12582912'
 alias startpostgres='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias stoppostgres='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
-
-#enable GRC
-if [ "command -v grc" ]; then
-    GRC=`which grc`
-    alias colourify="$GRC -es --colour=auto"
-    alias configure='colourify ./configure'
-    alias diff='colourify diff'
-    alias make='colourify make'
-    alias gcc='colourify gcc'
-    alias g++='colourify g++'
-    alias as='colourify as'
-    alias gas='colourify gas'
-    alias ld='colourify ld'
-    alias netstat='colourify netstat'
-    alias ping='colourify ping'
-    alias cat='colourify cat'
-    alias traceroute='colourify /usr/sbin/traceroute'
-fi
 
 if [ "command -v DNSSD" ]; then
   alias listbonjourservers="dns-sd -B _afpovertcp._tcp ."

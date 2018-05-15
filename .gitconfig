@@ -15,15 +15,17 @@
 	tool = opendiff
 
 [alias]
-  fmerge = merge --ff-only
-  imerge = merge --no-commit --no-ff
-  co     = checkout
-  stat   = status -sb
-  st     = status -sb
-  dt     = difftool
-  rc     = rebase --continue
-  ra     = rebase --abort
-	d = difftool
+  fmerge   = merge --ff-only
+  imerge   = merge --no-commit --no-ff
+  co       = checkout
+  stat     = status -sb
+  st       = status -sb
+  dt       = difftool
+  rc       = rebase --continue
+  ra       = rebase --abort
+	d        = difftool
+  chardiff = diff --color-words=.
+  worddiff = diff --color-words
 [core]
 	editor = /usr/local/bin/vim
 	excludesfile = ~/.gitignore_global
