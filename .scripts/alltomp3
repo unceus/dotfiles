@@ -1,0 +1,9 @@
+#!/bin/sh
+ 
+INPUT=$1
+OUTPUT=$2
+
+for FILE in "$INPUT"; do
+  ffmpeg -i "$FILE" -f mp3 "$FILE".mp3
+  rm -f "$FILE"
+done
