@@ -340,3 +340,6 @@ endif
 
 " supertab
 let g:SuperTabNoCompleteAfter = ['^', ',', '\s']
+
+"vim-jsx-pretty
+let g:vim_jsx_pretty_highlight_close_tag = 1
