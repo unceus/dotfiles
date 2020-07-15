@@ -1,0 +1,10 @@
+#! /bin/bash
+
+if [ $# -eq 0 -o -z "$1" ]
+  then
+    docker ps | nl -bptcp 1>&2
+    read -p $'\x0a\x0aenter the index of the container would you like to enter and press the return key:\x0a' arg1
+  else
+    arg1=$1
+fi
+echo $(docker ps -q | sed "$arg1!d")

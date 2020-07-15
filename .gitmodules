@@ -121,15 +121,24 @@
 [submodule "syntastic2"]
 	path = .vim/bundle/syntastic
 	url = https://github.com/vim-syntastic/syntastic.git
+  ignore = dirty
 [submodule ".vim/bundle/vim-mustache-handlebars"]
 	path = .vim/bundle/vim-mustache-handlebars
 	url = https://github.com/mustache/vim-mustache-handlebars.git
+  ignore = dirty
 [submodule ".vim/bundle/emmet-vi"]
 	path = .vim/bundle/emmet-vi
 	url = https://github.com/mattn/emmet-vim.git
+  ignore = dirty
 [submodule ".vim/bundle/rust.vim"]
 	path = .vim/bundle/rust.vim
 	url = https://github.com/rust-lang/rust.vim.git
+  ignore = dirty
 [submodule ".vim/bundle/vim-jsx-pretty"]
 	path = .vim/bundle/vim-jsx-pretty
 	url = https://github.com/MaxMEllon/vim-jsx-pretty.git
+  ignore = dirty
+[submodule ".vim/bundle/alchemist"]
+	path = .vim/bundle/alchemist
+	url = https://github.com/slashmili/alchemist.vim.git
+  ignore = dirty

@@ -1,0 +1,12 @@
+#! /bin/bash
+#this file assumes that you have docker installed and does not check for docker.
+#it also assumes that you have at least one docker container running.
+#usage:
+# - no arguments, shows you a list of running docker containers and allows you to select one of them by its index
+# - one argument, the container index, when you already know it
+
+container=`get_docker_container_id $1`
+
+echo "entering $container"
+
+docker exec -it $container /bin/bash
