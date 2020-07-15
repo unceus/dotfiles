@@ -30,7 +30,7 @@
 	editor = /usr/local/bin/vim
 	excludesfile = ~/.gitignore_global
 [rerere]
-	enabled = 1
+	enabled = true
 [help]
 	autocorrect = 1
 [push]
