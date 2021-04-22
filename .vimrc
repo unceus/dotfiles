@@ -101,18 +101,12 @@
   set wildignore+=*.swp,*~,._*
 
 
-  "NERDTree
-  nmap <space> :
-  nmap <Leader>nt :NERDTreeToggle<CR>
-  let NERDTreeShowHidden=1
-  au BufNewFile,BufRead *.ctp set filetype=php
-
 
   "JS Syntax highlighting with node
   let $JS_CMD='node'
 
   "Ragtag
-  let g:ragtag_global_maps = 1 
+  let g:ragtag_global_maps = 1
 
   "ctags
   let g:ctags_statusline=2
@@ -173,7 +167,7 @@ let g:ag_prg="ag --column"
 
   "some tab bindings
   map <leader>tt :tabnew<cr>
-  map <leader>te :tabedit 
+  map <leader>te :tabedit
   map <leader>tc :tabclose<cr>
   map <leader>to :tabnew<cr>
   map <leader>tn :tabnext<cr>
@@ -241,8 +235,14 @@ let g:airline#extensions#hunks#enabled = 0
 let g:airline_powerline_fonts = 1
 
 " NerdTree {
-  map <C-e> :NERDTreeToggle<CR>:NERDTreeMirror<CR>
-  nmap <leader>nt :NERDTreeFind<CR>
+  "map <C-e> :NERDTreeToggle<CR>:NERDTreeMirror<CR>
+  "nmap <leader>nt :NERDTreeFind<CR>
+
+  "nmap <space> :
+  nmap <Leader>nt :NERDTreeToggle<CR>
+  let NERDTreeShowHidden=1
+  au BufNewFile,BufRead *.ctp set filetype=php
+
 
   let NERDTreeShowBookmarks=1
   let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
@@ -343,3 +343,33 @@ let g:SuperTabNoCompleteAfter = ['^', ',', '\s']
 
 "vim-jsx-pretty
 let g:vim_jsx_pretty_highlight_close_tag = 1
+
+"coc
+augroup mygroup
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  " Update signature help on jump placeholder.
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
+
+autocmd User EasyMotionPromptBegin silent! CocDisable
+autocmd User EasyMotionPromptEnd silent! CocEnable
+
+"https://github.com/neoclide/coc.nvim/issues/357
+let g:coc_auto_copen=1
+
+"end coc
+"
+"ale
+
+let g:ale_fixers = {}
+let g:ale_fixers = {
+\   'javascript': ['prettier'],
+\   'typescript': ['prettier'],
+\   'html': ['prettier'],
+\   'css': ['prettier'],
+\}
+let g:ale_fixers['*'] = ['remove_trailing_lines', 'trim_whitespace']
+let g:ale_javascript_prettier_options = '--use-spaces'
+let g:ale_fix_on_save = 1

@@ -114,7 +114,7 @@ myBorderWidth = 1
 -- ("right alt"), which does not conflict with emacs keybindings. The
 -- "windows key" is usually mod4Mask.
 --
-myModMask = mod4Mask
+myModMask = mod1Mask
  
 myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   ----------------------------------------------------------------------
@@ -166,11 +166,11 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
   -- Chrome
   , ((modMask, 0x63),
-     spawn "google-chrome-stable")
+     spawn "firefox")
 
   -- Dict8
   , ((modMask, 0x64),
-     spawn "google-chrome-stable --app=https://app.dictate.life")
+     spawn "~/.scripts/dictate")
 
   -- Play/pause.
   , ((0, 0x1008FF14),

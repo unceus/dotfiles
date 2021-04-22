@@ -10,3 +10,4 @@ container=`get_docker_container_id $1`
 echo "killing container $container"
 
 docker kill $container
+docker rm -f $container

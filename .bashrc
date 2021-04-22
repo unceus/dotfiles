@@ -5,6 +5,8 @@ HISTCONTROL=ignoreboth
 HISTSIZE=50000
 export EDITOR=vim
 
+export TERM=rxvt-unicode
+
 # This ...should load RVM into a shell session.
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 
@@ -18,6 +20,7 @@ export PATH=/usr/local/bin:/opt/node/bin:$HOME/.rvm/bin:$HOME/.scripts:/usr/loca
 export PATH="$HOME/.yarn/bin:$PATH"
 export PATH=$HOME/.rvm/gems/ruby-2.4.1/bin:$PATH
 export PATH=documate_scripts:$PATH
+export PATH=$PATH:~/.local/bin
 
 export JAVA_HOME=/usr/lib/jvm/default
 
@@ -87,6 +90,7 @@ alias di='docker images'
 
 alias de='git push $1 --force --no-verify'
 alias dps='docker ps'
+alias dri='docker run -dt $1'
 
 #rails
 alias rr="rake routes | grep $1"
@@ -116,6 +120,7 @@ alias fp='ps aux -ww | ag $1'
 #Color ls
 alias ls='ls -G'
 alias p='ssh peanut'
+alias e='ssh exalt'
 
 #list directories by size
 alias qdu='du -h -d 1 . | sort -n -r'
@@ -140,6 +145,7 @@ alias gcl='git clone $1'
 alias gm='git checkout master'
 alias gb='git branch'
 alias gprune='git remote prune origin'
+alias gct='git checkout --theirs $1'
 function track() {
   git branch --set-upstream-to=$1
   }
@@ -152,6 +158,10 @@ alias grsh='git reset --soft HEAD^'
 function gsr() { git diff stash@{${1}}; }
 function gsa() { git stash apply stash@{"$*"}; }
 function gsp() { git stash pop stash@{"$*"}; }
+
+function gst() { git checkout --theirs "$1" && git add "$1"; }
+
+alias gu='git diff --name-only --diff-filter=U'
 
 function current_branch() {
   branch=$(git symbolic-ref -q HEAD)
@@ -189,3 +199,5 @@ alias kd='kubectl delete -f $1'
 alias kl='watch -n 1 kubectl logs $1'
 function ke() { kubectl exec "$1" -i -t -- bash; }
 function kdeletepod() { kubectl delete pod "$1" --grace-period=0 --force; }
+
+cd

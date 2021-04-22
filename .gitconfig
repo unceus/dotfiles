@@ -15,8 +15,8 @@
 	tool = opendiff
 
 [alias]
-  fmerge   = merge --ff-only
-  imerge   = merge --no-commit --no-ff
+  fmerge   = merge --no-ff
+  ffonly   = merge --ff-only
   co       = checkout
   stat     = status -sb
   st       = status -sb
@@ -26,11 +26,12 @@
 	d        = difftool
   chardiff = diff --color-words=.
   worddiff = diff --color-words
+  conflicts=diff --check
 [core]
 	editor = /usr/local/bin/vim
 	excludesfile = ~/.gitignore_global
 [rerere]
-	enabled = true
+	enabled = false
 [help]
 	autocorrect = 1
 [push]
@@ -48,4 +49,6 @@
 	smudge = git lfs smudge %f
 	required = true
 [cola]
-	fontdiff = Monospace,12,-1,5,50,0,0,0,0,0
+	fontdiff = Monospace,8,-1,5,50,0,0,0,0,0
+[pull]
+	rebase = false
