@@ -22,6 +22,7 @@
 
   set tabstop=2
   set expandtab
+  set et
   set bs=2
   set shiftwidth=2
   set guifont=Panic\ Sans:h12
@@ -367,6 +368,7 @@ let g:ale_fixers = {}
 let g:ale_fixers = {
 \   'javascript': ['prettier'],
 \   'typescript': ['prettier'],
+\   'ruby': ['prettier'],
 \   'html': ['prettier'],
 \   'css': ['prettier'],
 \}

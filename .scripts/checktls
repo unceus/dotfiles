@@ -1,0 +1,22 @@
+#! /bin/bash
+
+tls1_3=`timeout 1 openssl s_client -connect $1:443 -tls1_3 2>&1`
+tls1_2=`timeout 1 openssl s_client -connect $1:443 -tls1_2 2>&1`
+tls1_1=`timeout 1 openssl s_client -connect $1:443 -tls1_1 2>&1`
+tls1=`timeout 1 openssl s_client -connect $1:443 -tls1 2>&1`
+
+tlsversions=(
+  tls1_3
+  tls1_2
+  tls1_1
+  tls1
+)
+
+for i in ${tlsversions[@]}
+do
+  if [[ ${!i} == *"no peer certificate available"* ]]; then
+    echo "$i: UNAVAILABLE"
+  else
+    echo "$i: AVAILABLE"
+  fi
+done
