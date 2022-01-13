@@ -28,7 +28,7 @@
   set guifont=Panic\ Sans:h12
 
   "set clipbard for tmux
-  set clipboard=unnamed
+  set clipboard=unnamedplus
 
   "set cindent
   "Indents were getting really annoying, autoindent is the way to go
@@ -375,3 +375,11 @@ let g:ale_fixers = {
 let g:ale_fixers['*'] = ['remove_trailing_lines', 'trim_whitespace']
 let g:ale_javascript_prettier_options = '--use-spaces'
 let g:ale_fix_on_save = 1
+
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
