@@ -1,0 +1,6 @@
+#! /bin/bash
+
+cp ~/.scripts/FFXIV_BOOT.cfg ~/.steam/steam/steamapps/compatdata/312060/pfx/drive_c/users/steamuser/Documents/My\ Games/FINAL\ FANTASY\ XIV\ -\ A\ Realm\ Reborn/
+cp ~/.scripts/FFXIV.cfg ~/.steam/steam/steamapps/compatdata/312060/pfx/drive_c/users/steamuser/Documents/My\ Games/FINAL\ FANTASY\ XIV\ -\ A\ Realm\ Reborn/
+
+echo 'complete.'
