@@ -15,7 +15,7 @@ export TERM=rxvt-unicode
 export RABBITMQ_URL='amqp://guest:guest@localhost/dictate'
 export SVN_EDITOR='vim'
 export PATH=$PATH:/Development/android-sdk-macosx/platform-tools:/Development/android-sdk-macosx/tools #android
-source /usr/share/nvm/init-nvm.sh
+#source /usr/share/nvm/init-nvm.sh
 export PATH=/usr/local/bin:/opt/node/bin:$HOME/.rvm/bin:$HOME/.scripts:/usr/local/rvm/bin:/usr/bin:$HOME/.gem/ruby/2.3.1/bin:$HOME/.gem/ruby/2.4.1/bin:./bin:$PATH
 export PATH="$HOME/.yarn/bin:$PATH"
 export PATH=$HOME/.rvm/gems/ruby-2.4.1/bin:$PATH
@@ -49,40 +49,11 @@ PS1='\[\e[1;36m\]\h.\[\e[m\]\[\e[0;32m\]\W\[\e[m\]\[\e[1;33m\] $(__git_ps1 "(%s)
 
 ################################################################################
 #Aliases
-#linux
-alias xterm='xterm -tn xterm-256color'
-alias sctl='sudo systemctl'
-alias c='google-chrome-stable'
-alias d='google-chrome-stable --app=https://app.dictate.life'
-alias lock='i3lock'
-alias pu='sudo pacman -Syu'
-alias pi='packer -S $1'
-alias pss='packer -Ss $1'
-alias pacmanremoveorphans='pacman -Rns $(pacman -Qtdq)'
-alias define='sdcv'
+if [ -f $HOME/.aliases ]; then
+  source ~/.aliases
+fi
 
-alias vi='vim'
-alias gob='ssh secure'
-alias wing='ssh winger'
-alias wl='ssh winger.local'
-alias gl='ssh abed'
-alias fin='open -a finder $1'
-alias sub='open -a Sublime\ Text $1'
-alias 'git-gui'='/usr/local/Cellar/git/1.7.12/libexec/git-core/git-gui'
-alias sublime='open -a Sublime\ Text\ 2 $1'
-alias canary='/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary --disable-web-security --allow-running-insecure-content'
-alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --disable-web-security --allow-running-insecure-content'
-alias simulator='open -a /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app/Contents/MacOS/Simulator'
-alias removesvn='rm -rf `find . -type d -name .svn`'
-alias restoreprod='development restore production && rake jobs:clear db:migrate db:seed db:anonymize'
-alias nombom='npm cache clear && bower cache clean && rm -rf node_modules bower_components && npm install && bower install'
-alias dockerenv='eval $(docker-machine env)'
-alias dockercleanimages='docker image prune -f;docker rm $(docker ps -q -f status=exited);docker volume rm $(docker volume ls -qf dangling=true);docker rmi $(docker images --filter "dangling=true" -q --no-trunc)'
-function dc() { docker-compose "$*"; }
-alias removeunusedpackages='pacman -Rsn $(pacman -Qdtq)'
-alias iex='JWT_SECRET=fartz rlwrap -a -A iex'
-alias mt='JWT_SECRET=fartz mix test --trace'
-alias mti='JWT_SECRET=fartz iex -S mix test --trace'
+#linux
 function encrypt() { openssl aes-256-cbc -salt -in $1 -out $2; }
 function decrypt() { openssl aes-256-cbc -d -salt -in $1 -out $2; }
 
