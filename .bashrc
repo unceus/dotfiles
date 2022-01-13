@@ -152,7 +152,7 @@ function track() {
 function gss() { git stash save "$*"; }
 alias gsl='git stash list'
 alias gpf='git push --force'
-function gri() { git rebase -p --interactive HEAD~${1//[[:blank:]]/}; }
+function gri() { git rebase -i HEAD~${1}; }
 alias grhh='git reset --hard HEAD'
 alias grsh='git reset --soft HEAD^'
 function gsr() { git diff stash@{${1}}; }
@@ -200,4 +200,6 @@ alias kl='watch -n 1 kubectl logs $1'
 function ke() { kubectl exec "$1" -i -t -- bash; }
 function kdeletepod() { kubectl delete pod "$1" --grace-period=0 --force; }
 
-cd
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
