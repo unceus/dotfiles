@@ -28,7 +28,7 @@
   worddiff = diff --color-words
   conflicts=diff --check
 [core]
-	editor = /usr/local/bin/vim
+	editor = /usr/bin/vim
 	excludesfile = ~/.gitignore_global
 [rerere]
 	enabled = false
@@ -50,5 +50,8 @@
 	required = true
 [cola]
 	fontdiff = Monospace,8,-1,5,50,0,0,0,0,0
+	spellcheck = false
 [pull]
 	rebase = false
+[init]
+	defaultBranch = master
