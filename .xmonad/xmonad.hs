@@ -5,12 +5,14 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.SetWMName
+import XMonad.Hooks.FloatNext
 import XMonad.Layout.Fullscreen
 import XMonad.Layout.NoBorders
 import XMonad.Layout.SimplestFloat
 import XMonad.Layout.Spiral
 import XMonad.Layout.PerWorkspace(onWorkspace)
 import XMonad.Layout.Tabbed
+import XMonad.Layout.SimpleFloat
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys)
 import qualified XMonad.StackSet as W
@@ -157,13 +159,14 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
      spawn "plexmediaplayer")
 
   -- Nemo (file manager)
-  , ((modMask, 0x66),
+  , ((modMask, xK_n),
      spawn "nemo")
 
   -- Git-cola
   , ((modMask, 0x67),
      spawn "git-cola")
 
+  , ((modMask, xK_f), toggleFloatAllNew)
   -- Chrome
   , ((modMask, 0x63),
      spawn "firefox")
@@ -201,7 +204,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
      setLayout $ XMonad.layoutHook conf)
 
   -- Resize viewed windows to the correct size.
-  , ((modMask, xK_n),
+  , ((modMask, xK_r),
      refresh)
 
   -- Move focus to the next window.
@@ -323,20 +326,20 @@ myLayouts = defaultLayouts
 --
 --main = xmonad =<< xmobar defaultConfig { terminal = "urxvt" }
 
-main = do  
+main = do
  xmproc <- spawnPipe "/usr/bin/xmobar ~/.xmobarrc"
- xmonad $ defaults  
-      { manageHook = manageDocks <+> manageHook defaultConfig  
+ xmonad $ defaults
+      { manageHook = floatNextHook <+> manageDocks <+> manageHook defaultConfig
       , layoutHook = avoidStruts $ myLayouts
-      , logHook = dynamicLogWithPP xmobarPP  
-           { ppOutput = hPutStrLn xmproc  
-           , ppTitle = xmobarColor "#657b83" "" . shorten 100   
+      , logHook = dynamicLogWithPP xmobarPP
+           { ppOutput = hPutStrLn xmproc
+           , ppTitle = xmobarColor "#657b83" "" . shorten 100
            , ppCurrent = xmobarColor "#c0c0c0" "" . wrap "" ""
            , ppSep     = xmobarColor "#c0c0c0" "" " | "
            , ppUrgent  = xmobarColor "#ff69b4" ""
-           , ppLayout = const "" -- to disable the layout info on xmobar  
-           } 
-     } 
+           , ppLayout = const "" -- to disable the layout info on xmobar
+           }
+     }
 
 
 ------------------------------------------------------------------------
