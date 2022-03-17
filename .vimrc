@@ -101,6 +101,8 @@
   " Disable temp and backup files
   set wildignore+=*.swp,*~,._*
 
+  " Ignore corber and cordova build files
+  set wildignore+=*corber/cordova/*
 
 
   "JS Syntax highlighting with node
@@ -226,6 +228,8 @@ let g:ag_prg="ag --column"
   let g:ctrlp_map = '<leader>f'
   let g:ctrlp_cmd = 'CtrlP'
   let g:ctrlp_match_window = 'results:50,max:50'
+  "If a file is already open, open it again in a new pane instead of switching to the existing pane
+  let g:ctrlp_switch_buffer = 'et'
 
   " Ctrlp mappings
   map <leader>gc :CtrlP app/controllers<cr>
@@ -387,3 +391,8 @@ if executable('ag')
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
+
+"make error highlight purple instead of red
+highlight SpellBad ctermbg=5
+
+let g:snipMate = { 'snippet_version' : 1 }

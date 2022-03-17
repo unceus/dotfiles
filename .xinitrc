@@ -1,4 +1,3 @@
-autocutsel &
-autocutsel -selection PRIMARY &
-dropbox &
+autocutsel -f &
+albert &
 exec xmonad

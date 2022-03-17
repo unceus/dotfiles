@@ -72,14 +72,14 @@ alias fs='foreman start && passenger stop'
 
 alias mpc='mpc -h abed'
 alias mpd='mpd /etc/mpd.conf --no-daemon'
-alias ss='screen -S $1'
+alias scs='screen -S $1'
 alias sr='screen -x $1'
 alias sls='screen -ls'
 function sd() { screen -X -S $1 quit; }
 
 alias tmux='TERM=screen-256color-bce tmux'
 alias ts='TERM=screen-256color-bce tmux new -s $1'
-alias tr='tmux at -d -t $1'
+#alias tr='tmux at -d -t $1'
 alias td='tmux attach -d' #not tested with multiple sessions
 alias tls='tmux ls'
 
@@ -108,9 +108,9 @@ alias gp='git push -u'
 alias gd='git diff'
 alias gds='git diff --staged'
 
-alias gi='git log --all --oneline --color --decorate'
-alias gg='git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short --decorate'
-alias glo='git log --oneline --no-merges master..'
+alias gi='git log --use-mailmap --all --oneline --color --decorate'
+alias gg='git log --pretty=format:"%h %ad | %s%d [%aN]" --graph --date=short --decorate'
+alias glo='git log --use-mailmap --oneline --no-merges master..'
 alias gco='git checkout $1'
 alias gcl='git clone $1'
 alias gm='git checkout master'
@@ -174,3 +174,5 @@ function kdeletepod() { kubectl delete pod "$1" --grace-period=0 --force; }
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export ERL_AFLAGS="-kernel shell_history enabled"

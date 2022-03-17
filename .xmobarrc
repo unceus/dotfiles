@@ -1,6 +1,6 @@
 Config { font = "xft:inconsolatalgc:pixelsize=20:antialias=true"
-  , bgColor = "#002b36"
-  , fgColor = "#657b83"
+  , bgColor = "#ff0ab6"
+  , fgColor = "#121412"
   , border = NoBorder
   , borderColor = "black"
   , hideOnStart = False
@@ -8,11 +8,11 @@ Config { font = "xft:inconsolatalgc:pixelsize=20:antialias=true"
   , position = Top
   , lowerOnStart = True
   , commands = [
-    Run Network "wlp58s0" ["-L","0","-H","32","--normal","#657b83","--high","#657b83"] 10
-    , Run Cpu ["-L","3","-H","50","--normal","#657b83","--high","#657b83"] 10
+    Run Network "wlan0" ["-L","0","-H","32","--normal","#121412","--high","#43698f"] 10
+    , Run Cpu ["-L","3","-H","50","--normal","#121412","--high","#43698f"] 10
     , Run Memory ["-t","Mem: <usedratio>%"] 10
     , Run Com "volume.sh" [] "vol" 1
-    , Run Date "<fc=#93a1a1>%a %b %_d %Y %l:%M</fc>" "date" 10
+    , Run Date "<fc=#121412>%a %b %_d %Y %l:%M</fc>" "date" 10
     , Run StdinReader
     , Run Battery        [ "--template" , "Batt: <acstatus>"
                          , "--Low"      , "15"        -- units: %
@@ -33,5 +33,5 @@ Config { font = "xft:inconsolatalgc:pixelsize=20:antialias=true"
   ]
   , sepChar = "%"
   , alignSep = "}{"
-  , template = " %StdinReader% }{ %cpu% | %memory% | %wlp58s0% | %vol% | %battery% | %date% "
+  , template = " %StdinReader% }{ %cpu% | %memory% | %wlan0% | %vol% | %battery% | %date% "
 }
