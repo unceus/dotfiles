@@ -77,7 +77,6 @@ myManageHook = composeAll
 defaultLayouts = avoidStruts (
     Tall 1 (3/100) (1/2) |||
     Mirror (Tall 1 (3/100) (1/2)) |||
-    tabbed shrinkText tabConfig |||
     Full |||
     spiral (6/7)) |||
     noBorders (fullscreenFull Full)
@@ -89,14 +88,7 @@ myNormalBorderColor = "#002b36"
 myFocusedBorderColor = "#657b83"
 
 -- Colors for text and backgrounds of each tab when in "Tabbed" layout.
-tabConfig = defaultTheme {
-    activeBorderColor = "#7C7C7C",
-    activeTextColor = "#CEFFAC",
-    activeColor = "#000000",
-    inactiveBorderColor = "#7C7C7C",
-    inactiveTextColor = "#EEEEEE",
-    inactiveColor = "#000000"
-}
+
 
 -- Color of current window title in xmobar.
 xmobarTitleColor = "green"

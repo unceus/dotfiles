@@ -1,0 +1,3 @@
+#! /bin/sh
+
+~/.scripts/sass2scss --keep --pretty --convert < $1 > $1.scss
