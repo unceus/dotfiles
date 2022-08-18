@@ -354,6 +354,10 @@ let g:SuperTabNoCompleteAfter = ['^', ',', '\s']
 let g:vim_jsx_pretty_highlight_close_tag = 1
 
 "coc
+" remap <cr> to make it confirm completion.
+inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+" make <cr> select the first completion item and confirm the completion when no item has been selected
+inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
 augroup mygroup
   autocmd!
   " Setup formatexpr specified filetype(s).
@@ -368,18 +372,24 @@ autocmd User EasyMotionPromptEnd silent! CocEnable
 "https://github.com/neoclide/coc.nvim/issues/357
 let g:coc_auto_copen=1
 
+let g:coc_global_extensions = [
+  \ 'coc-tsserver',
+  \ 'coc-snippets',
+  \ 'coc-solargraph',
+  \ 'coc-json',
+  \ 'coc-eslint'
+  \ ]
+
+imap <TAB> <Plug>(coc-snippets-expand) <Plug>(coc-snippets-expand)
+
+"coc overlay color
+hi CocInfoFloat guifg=#ffdd00 guibg=#333333
+hi CocErrorFloat guifg=#ffdd00 guibg=#333333
+hi CocWarningFloat guifg=#ffdd00 guibg=#333333
+hi CocHintFloat guifg=#ffdd00 guibg=#333333
+
 "end coc
 "
-"ale
-
-let g:ale_fixers = {
-\   'typescript': [],
-\   'ruby': ['prettier'],
-\   'html': ['prettier'],
-\   'css': ['prettier'],
-\}
-let g:ale_fixers.javascript = ['eslint']
-let g:ale_fix_on_save = 1
 
 if executable('ag')
   " Use Ag over Grep

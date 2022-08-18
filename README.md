@@ -1,10 +1,17 @@
 `my dotfiles`
 
+# Setup
 
-Make sure submodules are checked out after pull:
+1. Make sure submodules are checked out after pull:
 
     git submodule init
     git submodule update
+
+2. Set up coc (https://github.com/neoclide/coc.nvim)
+
+    cd .vim/bundle/coc.nvim
+
+    yarn
 
 To update already downloaded modules,
 

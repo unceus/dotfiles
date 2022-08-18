@@ -142,10 +142,6 @@
 	path = .vim/bundle/typescript-vim
 	url = https://github.com/leafgarland/typescript-vim.git
   ignore = dirty
-[submodule ".vim/bundle/ale"]
-	path = .vim/bundle/ale
-	url = https://github.com/dense-analysis/ale.git
-  ignore = dirty
 [submodule ".vim/bundle/YouCompleteMe"]
 	path = .vim/bundle/YouCompleteMe
 	url = https://github.com/ycm-core/YouCompleteMe.git
@@ -153,6 +149,17 @@
 [submodule ".vim/bundle/nerdtree"]
 	path = .vim/bundle/nerdtree
 	url = https://github.com/preservim/nerdtree.git
-[submodule ".vim/bundle/vim-snipmate"]
-	path = .vim/bundle/vim-snipmate
-	url = https://github.com/garbas/vim-snipmate.git
+  ignore = dirty
+[submodule ".vim/bundle/vim-javascript"]
+	path = .vim/bundle/vim-javascript
+	url = https://github.com/pangloss/vim-javascript.git
+  ignore = dirty
+[submodule ".vim/bundle/vim-styled-components"]
+	path = .vim/bundle/vim-styled-components
+	url = https://github.com/styled-components/vim-styled-components/
+[submodule ".vim/bundle/coc.nvim"]
+	path = .vim/bundle/coc.nvim
+	url = https://github.com/neoclide/coc.nvim.git
+[submodule ".vim/bundle/coc-snippets"]
+	path = .vim/bundle/coc-snippets
+	url = https://github.com/neoclide/coc-snippets.git
