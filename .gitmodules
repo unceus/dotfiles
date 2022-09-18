@@ -163,3 +163,6 @@
 [submodule ".vim/bundle/coc-snippets"]
 	path = .vim/bundle/coc-snippets
 	url = https://github.com/neoclide/coc-snippets.git
+[submodule ".vim/bundle/ember-vim-snippets"]
+	path = .vim/bundle/ember-vim-snippets
+	url = https://github.com/josemarluedke/ember-vim-snippets.git
