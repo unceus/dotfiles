@@ -1,0 +1,23 @@
+#!/usr/bin/node
+
+const input = process.argv[2];
+const { execSync } = require('node:child_process');
+
+const fs = require('fs');
+fs.readFile(input, 'utf8', function (err,data) {
+
+  if (err) {
+    return console.log(err);
+  }
+
+  let idx = 0;
+  data.split('\n').map(function(url) {
+    const splitByDot = url.split('.');
+    const fileExtension = splitByDot[splitByDot.length-1];
+
+    console.log('downloading', url);
+
+    execSync(`wget "${url}" -O "${idx}.${fileExtension}"`)
+    idx++;
+  });
+});
