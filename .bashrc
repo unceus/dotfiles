@@ -26,6 +26,10 @@ export JAVA_HOME=/usr/lib/jvm/default
 
 [ -z "$PS1" ] && return
 export XENVIRONMENT="${HOME}/.Xresources"
+
+export QT_QPA_PLATFORMTHEME=qt5ct
+export QT_STYLE_OVERRIDE=qt5ct-style
+
 #Show git status in the bash prompt
 GIT_PS1_SHOWDIRTYSTATE=true
 if [ -f $HOME/.git-completion.bash ]; then

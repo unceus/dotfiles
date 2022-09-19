@@ -49,8 +49,11 @@
 	smudge = git lfs smudge %f
 	required = true
 [cola]
-	fontdiff = Monospace,14,-1,5,50,0,0,0,0,0
+	fontdiff = Anonymous Pro,12,-1,5,50,0,0,0,0,0
 	spellcheck = false
+	icontheme = dark
+	hidpi = disable
+	theme = flat-dark-grey
 [pull]
 	rebase = false
 [init]

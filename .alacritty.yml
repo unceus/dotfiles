@@ -3,12 +3,12 @@ font:
     family: Anonymous Pro
     style: Regular
 
-  size: 14
+  size: 11
 
 colors:
   # Default colors
   primary:
-    background: '#000000'
+    background: '#101010'
     foreground: '#F8F8F2'
 
   # Normal colors
