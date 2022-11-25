@@ -1,4 +1,4 @@
-#!/usr/bin/node
+#!/home/m/.nvm/versions/node/v16.17.0/bin/node
 
 const input = process.argv[2];
 const { execSync } = require('node:child_process');
@@ -9,15 +9,16 @@ fs.readFile(input, 'utf8', function (err,data) {
   if (err) {
     return console.log(err);
   }
+  const validUrls = data.split('\n').filter(function(x) { return x != ''})
 
   let idx = 0;
-  data.split('\n').map(function(url) {
+  validUrls.map(function(url) {
     const splitByDot = url.split('.');
     const fileExtension = splitByDot[splitByDot.length-1];
 
     console.log('downloading', url);
 
-    execSync(`wget "${url}" -O "${idx}.${fileExtension}"`)
+    execSync(`wget -q "${url}" -O "${idx}.${fileExtension}"`)
     idx++;
   });
 });

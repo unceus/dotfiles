@@ -157,12 +157,20 @@
 [submodule ".vim/bundle/vim-styled-components"]
 	path = .vim/bundle/vim-styled-components
 	url = https://github.com/styled-components/vim-styled-components/
+  ignore = dirty
 [submodule ".vim/bundle/coc.nvim"]
 	path = .vim/bundle/coc.nvim
 	url = https://github.com/neoclide/coc.nvim.git
+  ignore = dirty
 [submodule ".vim/bundle/coc-snippets"]
 	path = .vim/bundle/coc-snippets
 	url = https://github.com/neoclide/coc-snippets.git
+  ignore = dirty
 [submodule ".vim/bundle/ember-vim-snippets"]
 	path = .vim/bundle/ember-vim-snippets
 	url = https://github.com/josemarluedke/ember-vim-snippets.git
+  ignore = dirty
+[submodule ".vim/bundle/vim-prettier"]
+	path = .vim/bundle/vim-prettier
+	url = https://github.com/prettier/vim-prettier
+  ignore = dirty

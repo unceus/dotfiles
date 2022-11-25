@@ -162,7 +162,7 @@ let g:ag_prg="ag --column"
   nmap <Leader>tl :TlistToggle<CR>
 
   "Paste toggle
-  nmap <Leader>p :set invpaste paste?<CR>
+  nmap <Leader>pp :set invpaste paste?<CR>
 
   "quick open vimrc
   nmap <Leader>ov :sp ~/.vimrc<CR>
@@ -403,3 +403,9 @@ endif
 highlight SpellBad ctermbg=5
 
 let g:snipMate = { 'snippet_version' : 1 }
+
+"prettier
+nmap <Leader>pw :Prettier<cr>
+
+"format elixir
+nnoremap <silent><Leader>mf :!mix format %<cr><cr>

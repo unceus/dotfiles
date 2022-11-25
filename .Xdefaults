@@ -1,7 +1,7 @@
 URxvt.foreground: white
 
-URxvt.font: xft:Anonymous Pro:antialias=true:pixelsize=22
-URxvt.background: rgba:0000/0000/0000/dddd
+URxvt.font: xft:Anonymous Pro:antialias=true:pixelsize=16
+URxvt.background: rgba:1400/1400/1400/dddd
 URxvt.loginShell: true
 URxvt.fading: 50
 URxvt.fadeColor: [0]black

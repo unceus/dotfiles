@@ -32,3 +32,6 @@ colors:
    magenta: '#AE81FF'
    cyan:    '#A1EFE4'
    white:   '#F9F8F5'
+key_bindings:
+  - { key: PageUp,   action: ScrollPageUp                 }
+  - { key: PageDown, action: ScrollPageDown               }
