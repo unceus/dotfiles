@@ -409,3 +409,11 @@ nmap <Leader>pw :Prettier<cr>
 
 "format elixir
 nnoremap <silent><Leader>mf :!mix format %<cr><cr>
+
+"fix coc windows hanging
+inoremap <C-c> <Esc>
+nmap <Esc> :call coc#util#float_hide() <CR>
+
+
+"fix coc transporting on suggestion
+let g:coc_user_config['suggest.noselect'] = v:false
