@@ -1,6 +1,7 @@
-URxvt.foreground: white
+URxvt.font:     xft:source code pro:size=12:antialias=true
+URxvt.boldFont: xft:bitstream vera sans mono:bold:size=12:antialias=true
 
-URxvt.font: xft:Anonymous Pro:antialias=true:pixelsize=16
+URxvt.foreground: white
 URxvt.background: rgba:1400/1400/1400/dddd
 URxvt.loginShell: true
 URxvt.fading: 50
@@ -13,3 +14,4 @@ URxvt.urlLauncher: /usr/bin/firefox
 URxvt.underlineColor: green
 URxvt.saveLines: 65535
 URxvt.scrollBar: false
+URxvt.letterSpace: -2
