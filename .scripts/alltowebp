@@ -1,0 +1,6 @@
+#!/bin/bash
+
+INPUT=$1
+OUTPUT=$2
+
+for f in *$1; do cwebp -q 85 -mt $f -o ${f%.*}.webp; done

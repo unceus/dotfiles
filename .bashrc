@@ -187,3 +187,4 @@ export NVM_DIR="$HOME/.nvm"
 export ERL_AFLAGS="-kernel shell_history enabled"
 
 complete -C /usr/bin/terraform terraform
+# . /opt/asdf-vm/asdf.sh

@@ -1,3 +1,4 @@
 {
-  "solargraph.trace.server": "messages"
+  "solargraph.trace.server": "messages",
+  "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh"
 }

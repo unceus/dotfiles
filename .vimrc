@@ -413,3 +413,4 @@ nnoremap <silent><Leader>mf :!mix format %<cr><cr>
 "fix coc windows hanging
 inoremap <C-c> <Esc>
 nmap <Esc> :call coc#util#float_hide() <CR>
+
