@@ -90,10 +90,6 @@
 	path = .vim/bundle/ag
 	url = https://github.com/rking/ag.vim
   ignore = dirty
-[submodule ".vim/bundle/vim-gitgutter"]
-	path = .vim/bundle/vim-gitgutter
-	url = https://github.com/airblade/vim-gitgutter.git
-  ignore = dirty
 [submodule ".vim/bundle/vim-airline"]
 	path = .vim/bundle/vim-airline
 	url = https://github.com/bling/vim-airline
@@ -169,4 +165,8 @@
 [submodule ".vim/bundle/vim-prettier"]
 	path = .vim/bundle/vim-prettier
 	url = https://github.com/prettier/vim-prettier
+  ignore = dirty
+[submodule ".vim/bundle/vim-gitgutter"]
+	path = .vim/bundle/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
   ignore = dirty
