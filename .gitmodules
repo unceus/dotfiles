@@ -162,3 +162,7 @@
 	path = .vim/bundle/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
   ignore = dirty
+[submodule ".vim/bundle/vim-gutentags"]
+	path = .vim/bundle/vim-gutentags
+	url = https://github.com/ludovicchabant/vim-gutentags.git
+  ignore = dirty
