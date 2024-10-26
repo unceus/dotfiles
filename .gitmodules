@@ -154,10 +154,6 @@
 	path = .vim/bundle/coc-snippets
 	url = https://github.com/neoclide/coc-snippets.git
   ignore = dirty
-[submodule ".vim/bundle/ember-vim-snippets"]
-	path = .vim/bundle/ember-vim-snippets
-	url = https://github.com/josemarluedke/ember-vim-snippets.git
-  ignore = dirty
 [submodule ".vim/bundle/vim-prettier"]
 	path = .vim/bundle/vim-prettier
 	url = https://github.com/prettier/vim-prettier
