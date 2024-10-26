@@ -19,7 +19,6 @@ export PATH=$PATH:/Development/android-sdk-macosx/platform-tools:/Development/an
 export PATH=/usr/local/bin:/opt/node/bin:$HOME/.rvm/bin:$HOME/.scripts:/usr/local/rvm/bin:/usr/bin:$HOME/.gem/ruby/2.3.1/bin:$HOME/.gem/ruby/2.4.1/bin:./bin:$PATH
 export PATH="$HOME/.yarn/bin:$PATH"
 export PATH=$HOME/.rvm/gems/ruby-2.4.1/bin:$PATH
-export PATH=documate_scripts:$PATH
 export PATH=$PATH:~/.local/bin
 
 export JAVA_HOME=/usr/lib/jvm/default
@@ -99,8 +98,6 @@ alias fp='ps aux -ww | ag $1'
 
 #Color ls
 alias ls='ls -G'
-alias p='ssh peanut'
-alias e='ssh exalt'
 
 #list directories by size
 alias qdu='du -h -d 1 . | sort -n -r'
