@@ -125,7 +125,7 @@ alias gprune='git remote prune origin'
 alias gct='git checkout --theirs $1'
 function track() {
   git branch --set-upstream-to=$1
-  }
+}
 function gss() { git stash save "$*"; }
 alias gsl='git stash list'
 alias gpf='git push --force'
@@ -178,10 +178,15 @@ function ke() { kubectl exec "$1" -i -t -- bash; }
 function kdeletepod() { kubectl delete pod "$1" --grace-period=0 --force; }
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
 export ERL_AFLAGS="-kernel shell_history enabled"
 
 complete -C /usr/bin/terraform terraform
 # . /opt/asdf-vm/asdf.sh
+
+alias dockercleanimages='docker image prune -f;docker rm $(docker ps -q -f status=exited);docker volume rm $(docker volume ls -qf dangling=true);docker rmi $(docker images --filter "dangling=true" -q --no-trunc);sudo docker system prune -a -f'
+#source /opt/anaconda2/bin/activate root
+
+export FZF_DEFAULT_COMMAND="rg --files --follow --no-ignore-vcs --hidden -g '!{**/node_modules/*,**/.git/*}'"

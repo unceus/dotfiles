@@ -34,3 +34,5 @@
 .xmonad/xmonaderrors
 !.cdmrc
 !.xmobarrc
+!.aliases
+!.config/nvim/**

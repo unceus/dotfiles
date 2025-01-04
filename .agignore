@@ -6,3 +6,4 @@ tmp/*
 dist/*
 *.min.js
 log/*
+tags

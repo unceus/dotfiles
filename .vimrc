@@ -9,7 +9,9 @@
 
   "256 colors
   set  t_Co=256
-  colorscheme distinguished
+  if !has('nvim')
+    colorscheme distinguished
+  endif
 
   set autoindent
   set splitbelow
@@ -153,10 +155,13 @@
 let g:ag_prg="ag --column"
 
   "Ack mapping
-  "ack with quotes
-  map <Leader>a :Ag!<Space>""<Left>
-  "find under cursor
-  map <Leader>aw *#:Ag!<CWORD><CR>
+  if !has('nvim')
+    "ack with quotes
+    map <Leader>a :Ag!<Space>""<Left>
+
+    "find under cursor
+    map <Leader>aw *#:Ag!<CWORD><CR>
+  endif
 
   "Taglist mapping
   nmap <Leader>tl :TlistToggle<CR>
@@ -165,8 +170,10 @@ let g:ag_prg="ag --column"
   nmap <Leader>pp :set invpaste paste?<CR>
 
   "quick open vimrc
-  nmap <Leader>ov :sp ~/.vimrc<CR>
-  nmap <Leader>sv :so ~/.vimrc<CR>
+  if !has('nvim')
+    nmap <Leader>ov :sp ~/.vimrc<CR>
+    nmap <Leader>sv :so ~/.vimrc<CR>
+  endif
 
   "some tab bindings
   map <leader>tt :tabnew<cr>
@@ -240,8 +247,8 @@ let g:ag_prg="ag --column"
 
   map <leader>b :FufBuffer<cr>
 
-let g:airline#extensions#hunks#enabled = 0
-let g:airline_powerline_fonts = 1
+"let g:airline#extensions#hunks#enabled = 0
+"let g:airline_powerline_fonts = 1
 
 " NerdTree {
   "map <C-e> :NERDTreeToggle<CR>:NERDTreeMirror<CR>
@@ -324,9 +331,11 @@ autocmd BufWinLeave * call clearmatches()
 
 
 "syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+if !has('nvim')
+  set statusline+=%#warningmsg#
+  set statusline+=%{SyntasticStatuslineFlag()}
+  set statusline+=%*
+endif
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_rust_checkers = ['rustc']
 "let g:syntastic_ruby_checkers = ['rubocop']
@@ -370,7 +379,7 @@ autocmd User EasyMotionPromptBegin silent! CocDisable
 autocmd User EasyMotionPromptEnd silent! CocEnable
 
 "https://github.com/neoclide/coc.nvim/issues/357
-let g:coc_auto_copen=1
+"let g:coc_auto_copen=1
 
 let g:coc_global_extensions = [
   \ 'coc-tsserver',
@@ -380,7 +389,7 @@ let g:coc_global_extensions = [
   \ 'coc-eslint'
   \ ]
 
-imap <TAB> <Plug>(coc-snippets-expand) <Plug>(coc-snippets-expand)
+"imap <TAB> <Plug>(coc-snippets-expand) <Plug>(coc-snippets-expand)
 
 "coc overlay color
 hi CocInfoFloat guifg=#ffdd00 guibg=#333333
@@ -413,4 +422,6 @@ nnoremap <silent><Leader>mf :!mix format %<cr><cr>
 "fix coc windows hanging
 inoremap <C-c> <Esc>
 nmap <Esc> :call coc#util#float_hide() <CR>
+
+nnoremap <Leader>ge :%s/<C-r>///g<Left><Left>
 

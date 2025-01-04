@@ -166,3 +166,7 @@
 	path = .vim/bundle/vim-gutentags
 	url = https://github.com/ludovicchabant/vim-gutentags.git
   ignore = dirty
+[submodule ".vim/bundle/copilot.vim"]
+	path = .vim/bundle/copilot.vim
+	url = https://github.com/github/copilot.vim.git
+  ignore = dirty
