@@ -14,6 +14,7 @@ vim.api.nvim_set_keymap("n", "<Leader>or", ":sp ~/README.md<cr>", { silent = tru
 vim.api.nvim_set_keymap("n", "<Leader>tn", ":tabnext<cr>", { silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>tc", ":tabclose<cr>", { silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>to", ":tabnew<cr>", { silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>tx", ":tabclose<cr>", { silent = true })
 
 vim.api.nvim_set_keymap("n", "<Leader>w", ":w<cr>", {})
 vim.api.nvim_set_keymap("n", "<Leader>ww", ":w<cr>", {})

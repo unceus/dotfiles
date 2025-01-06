@@ -16,3 +16,7 @@ vim.cmd([[
 
 -- local buf = "#" .. vim.api.nvim_win_get_buf(vim.g.statusline_winid)
 -- local filename = (fn.expand(buf) == "" and "Empty") or fn.expand(buf .. ":t")
+
+require("luasnip.loaders.from_snipmate").lazy_load()
+-- for luassnips tsx support, see the below thread (ensure the snippets file is named `typescriptreact`)
+-- https://github.com/L3MON4D3/LuaSnip/issues/132#issuecomment-1101731222

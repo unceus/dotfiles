@@ -44,6 +44,7 @@ or, if that doesn't work:
 
 - [Neovim Options List](https://neovim.io/doc/user/options.html)
 - [Neovim Default options](https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua)
+- [Fzf-lua docs - custom keybinds](https://github.com/ibhagwan/fzf-lua/wiki#how-do-i-set-custom-actions)
 
 ### Renaming variable
 
