@@ -8,6 +8,8 @@ vim.opt.laststatus = 2
 vim.opt.clipboard = "unnamedplus"
 vim.opt.shortmess:append({ I = false })
 vim.o.updatetime = 250
+vim.o.wrap = true
+vim.g.lazyvim_prettier_needs_config = false
 
 -- Show line diagnostics automatically in hover window - https://github.com/neovim/nvim-lspconfig/wiki/UI-Customization
 vim.api.nvim_create_autocmd("CursorHold", {

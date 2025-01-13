@@ -1,0 +1,16 @@
+snippet gen
+	defmodule MyNewGenServer do
+		use GenServer
+
+		def init(state) do
+			{:ok, state}
+		end
+
+		def handle_cast({:cast_method, param}, state) do
+			{:noreply, state}
+		end
+
+		def handle_call(:call_method, _from, state) do
+			{:reply, state, state}
+		end
+	end

@@ -1,0 +1,21 @@
+#component
+snippet component
+	import React from "react";
+	import { type ReactElement } from "react"
+
+	interface ${0}Props {
+	}
+
+	const ${0} = ({...props}: ${0}Props): ReactElement => {
+		return (<>component</>);
+	};
+
+	export default ${0};
+
+#console
+snippet console
+	console.log(${0})
+
+#log
+snippet log
+	console.log(${0})
