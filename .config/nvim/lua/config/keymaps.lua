@@ -20,6 +20,7 @@ vim.api.nvim_set_keymap("n", "<Leader>w", ":w<cr>", {})
 vim.api.nvim_set_keymap("n", "<Leader>ww", ":w<cr>", {})
 
 vim.api.nvim_set_keymap("n", "<C-J>", "<C-W>j<C-W>_", { silent = true })
+vim.api.nvim_set_keymap("n", "<C-K>", "<C-W>k<C-W>_", { silent = true })
 vim.api.nvim_set_keymap("n", "<C-h>", "<C-W>h<C-W><bar>_", { silent = true })
 vim.api.nvim_set_keymap("n", "<C-l>", "<C-W>l<C-W><bar>_", { silent = true })
 
