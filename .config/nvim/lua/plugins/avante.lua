@@ -7,8 +7,8 @@ return {
     provider = "copilot",
     auto_suggestions_provider = "copilot",
     copilot = {
-      -- model = "claude-3.5-sonnet",
-      model = "r1",
+      model = "claude-3.5-sonnet",
+      -- model = "o3-mini",
     },
   },
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
