@@ -69,7 +69,7 @@
   "Use F2 to toggle paste insanity
   nnoremap <F2> :set invpaste paste?<CR>
   imap <F2> <C-O>:set invpaste paste?<CR>
-  set pastetoggle=<F2>
+  "set pastetoggle=<F2>
 
   "Use movement keys to navigate window splits
   map <C-J> <C-W>j<C-W>_gg
