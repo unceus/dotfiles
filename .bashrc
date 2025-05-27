@@ -20,6 +20,7 @@ export PATH=/usr/local/bin:/opt/node/bin:$HOME/.rvm/bin:$HOME/.scripts:/usr/loca
 export PATH="$HOME/.yarn/bin:$PATH"
 export PATH=$HOME/.rvm/gems/ruby-2.4.1/bin:$PATH
 export PATH=$PATH:~/.local/bin
+export PATH=/home/m/.local/share/bob/nvim-bin:$PATH
 
 export JAVA_HOME=/usr/lib/jvm/default
 

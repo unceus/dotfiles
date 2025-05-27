@@ -30,7 +30,7 @@
   set guifont=Panic\ Sans:h12
 
   "set clipbard for tmux
-  set clipboard=unnamedplus
+  set clipboard+=unnamedplus
 
   "set cindent
   "Indents were getting really annoying, autoindent is the way to go
