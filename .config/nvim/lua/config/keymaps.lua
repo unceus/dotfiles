@@ -16,6 +16,10 @@ vim.api.nvim_set_keymap("n", "<Leader>tc", ":tabclose<cr>", { silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>to", ":tabnew<cr>", { silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>tx", ":tabclose<cr>", { silent = true })
 
+-- Explicitly preserve operator-pending commands (ct)
+vim.api.nvim_set_keymap("o", "t", "t", { noremap = true })
+vim.api.nvim_set_keymap("o", "T", "T", { noremap = true })
+
 vim.api.nvim_set_keymap("n", "<Leader>w", ":w<cr>", {})
 vim.api.nvim_set_keymap("n", "<Leader>ww", ":w<cr>", {})
 

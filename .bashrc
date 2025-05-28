@@ -174,8 +174,8 @@ alias ki='kubectl get ingress'
 alias ka='kubectl apply -f $1'
 alias kc='kubectl create -f $1'
 alias kd='kubectl delete -f $1'
-alias kl='watch -n 1 kubectl logs $1'
-function ke() { kubectl exec "$1" -i -t -- bash; }
+alias kl='kubectl logs -f $1'
+function ke() { kubectl exec "$1" -i -t -- sh; }
 function kdeletepod() { kubectl delete pod "$1" --grace-period=0 --force; }
 
 export NVM_DIR="$HOME/.nvm"
