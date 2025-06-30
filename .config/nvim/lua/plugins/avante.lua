@@ -10,6 +10,18 @@ return {
       model = "claude-3.5-sonnet",
       -- model = "o3-mini",
     },
+    mappings = {
+      --- @class AvanteConflictMappings
+      diff = {
+        ours = "co",
+        theirs = "cT",
+        all_theirs = "ca",
+        both = "cb",
+        cursor = "cc",
+        next = "]x",
+        prev = "[x",
+      },
+    },
   },
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
   build = "make",

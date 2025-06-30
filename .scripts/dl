@@ -7,13 +7,6 @@
 
 container=`get_docker_container_id $1`
 
-echo "entering $container"
+echo "tailing logs for $container"
 
-if [ $# -eq 0 -o -z "$2" ]
-  then
-    arg1="/bin/bash"
-  else
-    arg1=$2
-fi
-
-docker exec -it $container $arg1
+docker logs -f $container $arg1
