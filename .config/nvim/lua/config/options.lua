@@ -5,7 +5,7 @@
 vim.g.mapleader = ""
 vim.opt.relativenumber = false
 vim.opt.laststatus = 2
-vim.opt.clipboard = "unnamed"
+vim.opt.clipboard = "unnamedplus"
 vim.opt.shortmess:append({ I = false })
 vim.o.updatetime = 250
 vim.o.wrap = true

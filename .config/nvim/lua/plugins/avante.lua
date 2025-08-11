@@ -6,9 +6,14 @@ return {
   opts = {
     provider = "copilot",
     auto_suggestions_provider = "copilot",
-    copilot = {
-      model = "claude-3.5-sonnet",
-      -- model = "o3-mini",
+    providers = {
+      copilot = {
+        model = "claude-sonnet-4",
+        -- model = "claude-3.5-sonnet",
+        -- model = "gpt-4o",
+        -- model = "gpt-4.1",
+        -- model = "o3-mini",
+      },
     },
     mappings = {
       --- @class AvanteConflictMappings

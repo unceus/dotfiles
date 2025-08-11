@@ -174,7 +174,7 @@ alias ki='kubectl get ingress'
 alias ka='kubectl apply -f $1'
 alias kc='kubectl create -f $1'
 alias kd='kubectl delete -f $1'
-alias kl='kubectl logs -f $1'
+function kl() { kubectl logs -f "$1"; }
 function ke() { kubectl exec "$1" -i -t -- sh; }
 function kdeletepod() { kubectl delete pod "$1" --grace-period=0 --force; }
 
@@ -186,8 +186,11 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 
 complete -C /usr/bin/terraform terraform
 # . /opt/asdf-vm/asdf.sh
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
 alias dockercleanimages='docker image prune -f;docker rm $(docker ps -q -f status=exited);docker volume rm $(docker volume ls -qf dangling=true);docker rmi $(docker images --filter "dangling=true" -q --no-trunc);sudo docker system prune -a -f'
 #source /opt/anaconda2/bin/activate root
 
 export FZF_DEFAULT_COMMAND="rg --files --follow --no-ignore-vcs --hidden -g '!{**/node_modules/*,**/.git/*}'"
+
+export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"

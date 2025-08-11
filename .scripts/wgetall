@@ -18,7 +18,7 @@ fs.readFile(input, 'utf8', function (err,data) {
 
     console.log('downloading', url);
 
-    execSync(`wget -q "${url}" -O "${idx}.${fileExtension}"`)
+    execSync(`wget --unlink -q "${url}"`)
     idx++;
   });
 });
