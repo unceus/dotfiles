@@ -32,3 +32,10 @@ vim.api.nvim_set_keymap("n", "<C-l>", "<C-W>l<C-W><bar>_", { silent = true })
 vim.api.nvim_set_keymap("n", "<Leader><space>", ":noh<cr>", { silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>f", "<cmd>FzfLua files<cr>", {})
 vim.api.nvim_set_keymap("n", "<Leader>a", "<cmd>FzfLua live_grep<cr>", {})
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>aD",
+  ':lua vim.fn.system("rm -Rf ~/.local/state/nvim/avante")<CR>',
+  { noremap = true, silent = true }
+)

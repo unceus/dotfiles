@@ -1,5 +1,6 @@
 import System.IO
 import System.Exit
+import System.Environment
 import XMonad
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
@@ -108,7 +109,13 @@ myBorderWidth = 1
 -- ("right alt"), which does not conflict with emacs keybindings. The
 -- "windows key" is usually mod4Mask.
 --
-myModMask = mod1Mask
+-- In VNC environments, use mod1Mask (Alt), otherwise use mod4Mask (Windows key)
+getModMask :: IO KeyMask
+getModMask = do
+  isVnc <- lookupEnv "IS_VNC"
+  return $ case isVnc of
+    Just _  -> mod1Mask  -- VNC environment detected
+    Nothing -> mod4Mask  -- Not in VNC
 
 myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   ----------------------------------------------------------------------
@@ -320,7 +327,8 @@ myLayouts = defaultLayouts
 
 main = do
  xmproc <- spawnPipe "/usr/bin/xmobar ~/.xmobarrc"
- xmonad $ defaults
+ modMask <- getModMask
+ xmonad $ (defaults modMask)
       { manageHook = floatNextHook <+> manageDocks <+> manageHook defaultConfig
       , layoutHook = avoidStruts $ myLayouts
       , logHook = dynamicLogWithPP xmobarPP
@@ -342,7 +350,7 @@ main = do
 --
 -- No need to modify this.
 --
-defaults = defaultConfig {
+defaults modMask = defaultConfig {
     -- simple stuff
 		handleEventHook = mconcat
 			[ docksEventHook
@@ -350,7 +358,7 @@ defaults = defaultConfig {
     terminal = myTerminal,
     focusFollowsMouse = myFocusFollowsMouse,
     borderWidth = myBorderWidth,
-    modMask = myModMask,
+    modMask = modMask,
     workspaces = myWorkspaces,
     normalBorderColor = myNormalBorderColor,
     focusedBorderColor = myFocusedBorderColor,
