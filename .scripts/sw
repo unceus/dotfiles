@@ -1,0 +1,19 @@
+#!/bin/sh
+#translate 2217665.rsync	(Remote or dead) into 2217665
+
+screen -ls | grep dead | while read -r line; do
+  # Extract the screen ID from the line
+  screen_id=$(echo "$line" | awk '{print $1}')
+
+  # Check if the screen ID is in the format of a number followed by ".rsync"
+  if echo "$screen_id" | grep -qE '^[0-9]+\.'; then
+    # Remove the ".rsync" part
+    new_screen_id=$(echo "$screen_id" | sed 's/\.*//')
+    screen -wipe $new_screen_id
+
+    # Rename the screen session
+    # screen -S "$screen_id" -X quit
+    # screen -S "$new_screen_id" -X rename "$new_screen_id"
+  fi
+done
+echo "done"
