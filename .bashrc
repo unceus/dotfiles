@@ -194,3 +194,11 @@ alias dockercleanimages='docker image prune -f;docker rm $(docker ps -q -f statu
 export FZF_DEFAULT_COMMAND="rg --files --follow --no-ignore-vcs --hidden -g '!{**/node_modules/*,**/.git/*}'"
 
 export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
+
+# pnpm
+export PNPM_HOME="/home/m/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

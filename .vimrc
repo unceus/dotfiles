@@ -363,10 +363,11 @@ let g:SuperTabNoCompleteAfter = ['^', ',', '\s']
 let g:vim_jsx_pretty_highlight_close_tag = 1
 
 "coc
-" remap <cr> to make it confirm completion.
+"remap <cr> to make it confirm completion.
 inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 " make <cr> select the first completion item and confirm the completion when no item has been selected
 inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
+
 augroup mygroup
   autocmd!
   " Setup formatexpr specified filetype(s).

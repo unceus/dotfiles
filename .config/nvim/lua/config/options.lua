@@ -26,3 +26,12 @@ vim.api.nvim_create_autocmd("CursorHold", {
     vim.diagnostic.open_float(nil, opts)
   end,
 })
+
+vim.diagnostic.enable(true)
+vim.diagnostic.config({
+  virtual_text = { severity = { min = vim.diagnostic.severity.HINT } },
+  signs = true,
+  underline = true,
+  update_in_insert = false,
+  severity_sort = true,
+})
