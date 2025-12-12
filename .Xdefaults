@@ -1,5 +1,5 @@
-URxvt.font:     xft:Source Code Pro:size=12:antialias=true
-URxvt.boldFont: xft:bitstream vera sans mono:bold:size=12:antialias=true
+URxvt.font:     xft:Monaspace Argon:size=12:antialias=true
+URxvt.boldFont: xft:Monaspace Argon:bold:size=12:antialias=true
 
 URxvt.foreground: white
 URxvt.background: rgba:1400/1400/1400/dddd

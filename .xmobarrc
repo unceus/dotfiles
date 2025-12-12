@@ -8,30 +8,14 @@ Config { font = "xft:inconsolatalgc:pixelsize=20:antialias=true"
   , position = Top
   , lowerOnStart = True
   , commands = [
-    Run Network "wlan0" ["-L","0","-H","32","--normal","#121412","--high","#43698f"] 10
+    Run Network "eth0" ["-L","0","-H","32","--normal","#121412","--high","#43698f"] 10
     , Run Cpu ["-L","3","-H","50","--normal","#121412","--high","#43698f"] 10
     , Run Memory ["-t","Mem: <usedratio>%"] 10
     , Run Com "volume.sh" [] "vol" 1
     , Run Date "<fc=#121412>%a %b %_d %Y %l:%M</fc>" "date" 10
     , Run StdinReader
-    , Run Battery        [ "--template" , "Batt: <acstatus>"
-                         , "--Low"      , "15"        -- units: %
-                         , "--High"     , "80"        -- units: %
-                         , "--low"      , "darkred"
-                         , "--normal"   , "darkorange"
-                         , "--high"     , "darkgreen"
-
-                         , "--" -- battery specific options
-                                   -- discharging status
-                                   , "-o"	, "<left>% (<timeleft>)"
-                                   -- AC "on" status
-                                   , "-O"	, "<fc=#dAA520>Charging</fc> <left>%"
-                                   -- charged status
-                                   , "-i"	, "<fc=#006000>Charged</fc>"
-                         ] 50
-
   ]
   , sepChar = "%"
   , alignSep = "}{"
-  , template = " %StdinReader% }{ %cpu% | %memory% | %wlan0% | %vol% | %battery% | %date% "
+  , template = " %StdinReader% }{ %cpu% | %memory% | %eth0% | %date% "
 }

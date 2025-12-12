@@ -159,16 +159,16 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
   -- Nemo (file manager)
   , ((modMask, xK_n),
-     spawn "nemo")
+     spawn "GTK_THEME=Adwaita:dark nemo")
 
   -- Git-cola
   , ((modMask, 0x67),
-     spawn "git-cola")
+     spawn "github-desktop")
 
   , ((modMask, xK_f), toggleFloatAllNew)
   -- Chrome
   , ((modMask, 0x63),
-     spawn "firefox")
+     spawn "rofi -show drun")
 
   -- Dict8
   , ((modMask, 0x64),
@@ -373,3 +373,4 @@ defaults modMask = defaultConfig {
     manageHook = myManageHook,
     startupHook = myStartupHook
 }
+

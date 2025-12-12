@@ -202,3 +202,21 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+export GTK_THEME=Adwaita:dark
+export GTK2_RC_FILES=/usr/share/themes/Adwaita-dark/gtk-2.0/gtkrc
+export NODE_OPTIONS="--max-old-space-size=4096"
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# Cross-platform pbcopy alias
+if command -v pbcopy &>/dev/null; then
+  alias pbcopy='pbcopy'   # macOS or any system that already has it
+elif command -v wl-copy &>/dev/null; then
+  alias pbcopy='wl-copy'  # Wayland (Linux)
+elif command -v xclip &>/dev/null; then
+  alias pbcopy='xclip -selection clipboard'  # X11 (Linux)
+elif command -v xsel &>/dev/null; then
+  alias pbcopy='xsel --clipboard'  # fallback
+else
+  echo "Warning: no clipboard tool found for pbcopy alias." >&2
+fi
