@@ -62,6 +62,10 @@ if [ -f $HOME/.aliases ]; then
   source ~/.aliases
 fi
 
+if [ -f $HOME/.aliases-shared ]; then
+  source ~/.aliases-shared
+fi
+
 #linux
 function encrypt() { openssl aes-256-cbc -salt -in $1 -out $2; }
 function decrypt() { openssl aes-256-cbc -d -salt -in $1 -out $2; }
@@ -198,8 +202,8 @@ export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
 # pnpm
 export PNPM_HOME="/home/m/.local/share/pnpm"
 case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
+*":$PNPM_HOME:"*) ;;
+*) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
 
@@ -210,13 +214,13 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 # Cross-platform pbcopy alias
 if command -v pbcopy &>/dev/null; then
-  alias pbcopy='pbcopy'   # macOS or any system that already has it
+  alias pbcopy='pbcopy' # macOS or any system that already has it
 elif command -v wl-copy &>/dev/null; then
-  alias pbcopy='wl-copy'  # Wayland (Linux)
+  alias pbcopy='wl-copy' # Wayland (Linux)
 elif command -v xclip &>/dev/null; then
-  alias pbcopy='xclip -selection clipboard'  # X11 (Linux)
+  alias pbcopy='xclip -selection clipboard' # X11 (Linux)
 elif command -v xsel &>/dev/null; then
-  alias pbcopy='xsel --clipboard'  # fallback
+  alias pbcopy='xsel --clipboard' # fallback
 else
   echo "Warning: no clipboard tool found for pbcopy alias." >&2
 fi

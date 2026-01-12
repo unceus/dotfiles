@@ -1,0 +1,7 @@
+alias ok='git commit --allow-empty-message -m ""'
+alias gwl='git worktree list'
+alias gwa='git worktree add'
+alias gwc='git worktree add'
+alias ca='cd ../alpha'
+alias cb='cd ../beta'
+alias cm='cd ../master'

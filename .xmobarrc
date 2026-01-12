@@ -1,5 +1,5 @@
-Config { font = "xft:inconsolatalgc:pixelsize=20:antialias=true"
-  , bgColor = "#ff0ab6"
+Config { font = "xft:Monaspace Argon:pixelsize=20:antialias=true"
+  , bgColor = "#ff1f0f"
   , fgColor = "#121412"
   , border = NoBorder
   , borderColor = "black"

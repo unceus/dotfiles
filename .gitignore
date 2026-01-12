@@ -37,3 +37,4 @@
 !.config/
 !.config/nvim/
 !.config/nvim/**
+!.aliases-shared
