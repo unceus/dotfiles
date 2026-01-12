@@ -41,18 +41,20 @@ if [ -f $HOME/.git-prompt.sh ]; then
   source ~/.git-prompt.sh
 fi
 
+if [ -f $HOME/.scripts/cwd_workspace.sh ]; then
+  source ~/.scripts/cwd_workspace.sh
+fi
+
 #rust
 if [ -f $HOME/.cargo/env ]; then
   . "$HOME/.cargo/env"
 fi
 
 #Bash prompt
-#PS1='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[3;32m\]$(__git_ps1 "(%s)")☺\[\e[m\] \[\e[1;37m\]'
-#PS1='[ \[\e[0;32m\]\u\[\e[m\] | \[\e[1;34m\]\W\[\e[m\] \[\e[3;32m\]$(__git_ps1 "(%s)") ] ☺\[\e[m\] \[\e[1;37m\]'
-#PS1='\[\e[1;30m\].\[\e[m\]\[\e[0;37m\]\u\[\e[m\] \[\e[1;30m\]»\[\e[m\] \[\e[0;32m\]\W\[\e[m\]\[\e[1;33m\] $(__git_ps1 "(%s)")\[\e[m\]\[\e[3;32m\]☺\[\e[m\] \[\e[1;37m\]'
 
 #PS1='\[\e[1;36m\]\h.\[\e[m\]\[\e[0;32m\]\W\[\e[m\]\[\e[1;33m\] $(__git_ps1 "(%s)")\[\e[m\]\[\e[3;32m\]¯\_(ツ)_/¯ \[\e[m\]\[\e[1;37m\]'
-PS1='\[\e[1;36m\]\h.\[\e[m\]\[\e[0;32m\]\W\[\e[m\]\[\e[1;33m\] $(__git_ps1 "(%s)")\[\e[m\]\[\e[3;32m\](╯°□°）╯︵ ┻━┻) \[\e[m\]\[\e[1;37m\]'
+#PS1='\[\e[1;36m\]\h.\[\e[m\]\[\e[0;32m\]\W\[\e[m\]\[\e[1;33m\] $(__git_ps1 "(%s)")\[\e[m\]\[\e[3;32m\](╯°□°）╯︵ ┻━┻) \[\e[m\]\[\e[1;37m\]'
+PS1='\[\e[1;36m\]\h.\[\e[m\]\[\e[0;32m\]$(cwd_workspace_label "(%s)")\[\e[m\]\[\e[1;33m\] $(__git_ps1 "(%s)")\[\e[m\]\[\e[3;32m\](╯°□°）╯︵ ┻━┻) \[\e[m\]\[\e[1;37m\]'
 #git line - standalone
 #PS1='$(__git_ps1 "(%s)")'
 
